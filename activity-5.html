@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>科莫多探险 · 与史前巨兽面对面 | 天泽户外</title>
+  <style>
+    @font-face { font-family: 'NationalPark'; src: url('./_shared/fonts/NationalPark-Regular.ttf') format('truetype'); font-weight: 400; }
+    @font-face { font-family: 'NationalPark'; src: url('./_shared/fonts/NationalPark-Bold.ttf') format('truetype'); font-weight: 700; }
+    @font-face { font-family: 'Outfit'; src: url('./_shared/fonts/Outfit-Regular.ttf') format('truetype'); font-weight: 400; }
+    @font-face { font-family: 'Outfit'; src: url('./_shared/fonts/Outfit-Bold.ttf') format('truetype'); font-weight: 700; }
+    @font-face { font-family: 'DMMono'; src: url('./_shared/fonts/DMMono-Regular.ttf') format('truetype'); font-weight: 400; }
+  </style>
+  <style>
+    :root {
+      --bg: #f8f5f0; --bg2: #f0ebe2; --bg3: #e8e0d0;
+      --ink: #2a2520; --muted: #7a7065; --rule: #d9d0c3;
+      --forest: #3a5a40; --soil: #8b6f47; --sun: #e09a3a; --sea: #3d8a9a;
+      --ocean: #1a5276; --ocean-light: #2e86c1; --ocean-pale: #d4e6f1; --ocean-deep: #0d3b5c;
+      --coral: #ff6b6b; --sand-pink: #f4c2c2;
+      --accent: #1a5276; --accent2: #e09a3a;
+      --font: 'Outfit', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      --font-display: 'NationalPark', 'PingFang SC', serif;
+      --font-mono: 'DMMono', monospace;
+      --max: 960px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { font-family: var(--font); color: var(--ink); background: var(--bg); line-height: 1.75; -webkit-font-smoothing: antialiased; }
+    article.page { max-width: var(--max); margin: 0 auto; }
+    .top-nav { background: var(--bg2); border-bottom: 1px solid var(--rule); padding: 0.7rem 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; position: sticky; top: 0; z-index: 50; }
+    .nav-brand { font-family: var(--font-display); font-size: 0.9rem; color: var(--ink); font-weight: 700; }
+    .nav-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .nav-links a { font-size: 0.82rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent2); }
+    .hero { position: relative; width: 100%; min-height: 640px; overflow: hidden; display: flex; align-items: center; background: linear-gradient(135deg, #0d3b5c 0%, #1a5276 30%, #2e86c1 65%, #3d8a9a 100%); }
+    .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(13,59,92,0.7) 0%, rgba(26,82,118,0.4) 45%, rgba(46,134,193,0.15) 100%); }
+    .hero-content { position: relative; z-index: 2; padding: 4rem 2rem; max-width: 640px; color: #fff; animation: fadeUp 1.2s ease-out; }
+    .hero-badge { display: inline-block; font-size: 0.78rem; letter-spacing: 0.08em; color: #fff; border: 1px solid rgba(255,255,255,0.5); padding: 0.3rem 1rem; border-radius: 20px; margin-bottom: 1.5rem; backdrop-filter: blur(6px); background: rgba(13,59,92,0.45); }
+    .hero-content h1 { font-family: var(--font-display); font-size: 2.7rem; font-weight: 700; line-height: 1.25; margin-bottom: 1rem; text-shadow: 0 2px 20px rgba(0,0,0,0.5); }
+    .hero-content .subtitle { font-size: 1.05rem; color: rgba(255,255,255,0.92); font-weight: 400; margin-bottom: 0.6rem; }
+    .hero-content .tagline { font-size: 0.92rem; color: rgba(255,255,255,0.8); margin-bottom: 1rem; font-style: italic; }
+    .hero-buttons { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+    .btn { display: inline-block; padding: 0.7rem 1.6rem; border-radius: 30px; font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; border: none; }
+    .btn-primary { background: var(--accent2); color: #fff; box-shadow: 0 4px 16px rgba(224,154,58,0.4); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(224,154,58,0.5); }
+    .btn-outline { background: rgba(255,255,255,0.1); color: #fff; border: 1.5px solid rgba(255,255,255,0.5); backdrop-filter: blur(6px); }
+    .btn-outline:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    section { padding: 3.5rem 2rem; }
+    .section-tag { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ocean); margin-bottom: 0.5rem; }
+    section h2 { font-family: var(--font-display); font-size: 1.7rem; line-height: 1.35; margin-bottom: 0.8rem; color: var(--ink); }
+    section .section-desc { font-size: 0.92rem; color: var(--muted); margin-bottom: 1.5rem; max-width: 600px; }
+    .key-note { background: var(--ocean-pale); border-radius: 10px; padding: 0.8rem 1.2rem; font-size: 0.88rem; color: var(--ink); border-left: 4px solid var(--ocean); margin: 1rem 0; }
+    .key-note strong { color: var(--ocean); }
+    .intro-section { background: linear-gradient(180deg, var(--ocean-pale) 0%, var(--bg) 45%); }
+    .intro-text { font-size: 0.92rem; color: var(--muted); line-height: 1.85; max-width: 680px; margin: 0 auto; }
+    .intro-text p { margin-bottom: 0.8rem; }
+    .intro-text p strong { color: var(--ink); }
+    .philosophy-quote { background: var(--bg); border-radius: 14px; padding: 2rem 1.8rem; border: 1px solid var(--rule); margin: 1.5rem auto; max-width: 680px; text-align: center; position: relative; }
+    .philosophy-quote::before { content: '"'; position: absolute; top: -0.5rem; left: 1.2rem; font-family: var(--font-display); font-size: 3rem; color: var(--ocean-light); line-height: 1; opacity: 0.5; }
+    .philosophy-quote .quote-text { font-family: var(--font-display); font-size: 1.2rem; color: var(--ink); line-height: 1.6; }
+    .highlight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1.5rem 0; }
+    .highlight-card { background: var(--bg2); border-radius: 14px; padding: 1.5rem; border: 1px solid var(--rule); border-left: 4px solid var(--ocean-light); transition: transform 0.2s, box-shadow 0.2s; }
+    .highlight-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(26,82,118,0.12); }
+    .highlight-card .hc-icon { font-family: var(--font-display); font-size: 1.4rem; color: var(--ocean); margin-bottom: 0.5rem; }
+    .highlight-card h3 { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .highlight-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.75; }
+    .value-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1.5rem 0; }
+    .value-card { background: var(--bg2); border-radius: 14px; padding: 1.5rem; border: 1px solid var(--rule); border-left: 4px solid var(--ocean); }
+    .value-card:nth-child(2) { border-left-color: var(--ocean-light); }
+    .value-card:nth-child(3) { border-left-color: var(--sea); }
+    .value-card:nth-child(4) { border-left-color: var(--accent2); }
+    .value-card .vc-icon { font-family: var(--font-display); font-size: 1.4rem; color: var(--ocean); margin-bottom: 0.5rem; }
+    .value-card:nth-child(2) .vc-icon { color: var(--ocean-light); }
+    .value-card:nth-child(3) .vc-icon { color: var(--sea); }
+    .value-card:nth-child(4) .vc-icon { color: var(--accent2); }
+    .value-card h3 { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .value-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.75; }
+    .outcomes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0; }
+    .outcome-block { background: var(--bg2); border-radius: 14px; padding: 1.5rem; border: 1px solid var(--rule); }
+    .outcome-block h3 { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 0.8rem; color: var(--ocean); }
+    .outcome-block ul { list-style: none; }
+    .outcome-block ul li { font-size: 0.85rem; color: var(--ink); padding: 0.4rem 0 0.4rem 1.2rem; position: relative; line-height: 1.7; }
+    .outcome-block ul li::before { content: "▸"; position: absolute; left: 0; color: var(--ocean); }
+    .outcome-block ul li strong { color: var(--ocean); }
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+    .info-card { background: var(--bg); border-radius: 12px; padding: 1.3rem; border: 1px solid var(--rule); text-align: center; }
+    .info-card .ic-label { font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); text-transform: uppercase; margin-bottom: 0.3rem; }
+    .info-card .ic-value { font-family: var(--font-display); font-size: 1.2rem; color: var(--ink); font-weight: 700; }
+    .info-card .ic-detail { font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; }
+    .includes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+    .include-block { background: var(--bg); border-radius: 12px; padding: 1.3rem; border: 1px solid var(--rule); }
+    .include-block h4 { font-size: 0.95rem; margin-bottom: 0.6rem; color: var(--ocean); }
+    .include-block ul { list-style: none; }
+    .include-block ul li { font-size: 0.82rem; color: var(--muted); padding: 0.2rem 0 0.2rem 1rem; position: relative; }
+    .include-block ul li::before { content: "✓"; position: absolute; left: 0; color: var(--forest); }
+    .include-block.excludes ul li::before { content: "✗"; color: var(--accent2); }
+    .contact-section { background: var(--bg); }
+    .contact-card { background: linear-gradient(135deg, var(--bg2) 0%, var(--bg3) 100%); border-radius: 20px; padding: 2.5rem 2rem; text-align: center; border: 1px solid var(--rule); }
+    .contact-card h2 { font-family: var(--font-display); font-size: 1.7rem; margin-bottom: 0.8rem; }
+    .contact-card .contact-desc { font-size: 0.9rem; color: var(--muted); max-width: 480px; margin: 0 auto 1.5rem; line-height: 1.8; }
+    .qr-area { margin: 1.5rem auto; }
+    .qr-img { width: 200px; height: 200px; margin: 0 auto 0.5rem; border-radius: 16px; overflow: hidden; border: 3px solid var(--bg); box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+    .qr-img img { width: 100%; height: 100%; object-fit: cover; }
+    .qr-remark { font-size: 0.85rem; color: var(--ocean); font-weight: 600; margin-top: 0.8rem; }
+    .contact-info { max-width: 420px; margin: 1.5rem auto 0; text-align: left; }
+    .contact-info-item { display: flex; gap: 0.8rem; padding: 0.6rem 0; border-bottom: 1px solid var(--rule); }
+    .contact-info-item:last-child { border-bottom: none; }
+    .ci-label { font-family: var(--font-mono); font-size: 0.75rem; color: var(--ocean); min-width: 70px; padding-top: 2px; }
+    .ci-text { font-size: 0.85rem; color: var(--ink); }
+    .back-link-section { background: linear-gradient(135deg, #0d3b5c 0%, #1a5276 100%); color: #fff; text-align: center; padding: 3rem 2rem; }
+    .back-link-section h2 { font-family: var(--font-display); font-size: 1.5rem; color: #fff; margin-bottom: 0.6rem; }
+    .back-link-section p { font-size: 0.9rem; color: rgba(255,255,255,0.7); max-width: 440px; margin: 0 auto 1.5rem; }
+    .back-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.7rem 1.8rem; border-radius: 30px; background: var(--accent2); color: #fff; font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; margin: 0.3rem; }
+    .back-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(224,154,58,0.45); }
+    .back-btn.outline { background: rgba(255,255,255,0.1); border: 1.5px solid rgba(255,255,255,0.5); }
+    footer { padding: 1.5rem 2rem; text-align: center; background: var(--bg2); border-top: 1px solid var(--rule); }
+    footer .brand { font-family: var(--font-display); font-size: 0.95rem; color: var(--ink); margin-bottom: 0.2rem; }
+    footer p { font-size: 0.78rem; color: var(--muted); }
+    .float-contact { position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%); background: var(--ocean); color: #fff; padding: 0.65rem 1.8rem; border-radius: 30px; font-size: 0.85rem; font-weight: 600; text-decoration: none; box-shadow: 0 4px 16px rgba(26,82,118,0.4); z-index: 100; display: none; }
+    /* === 图片画廊 === */
+    .gallery-section { background: var(--bg); }
+    .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1.5rem 0; }
+    .gallery-item { margin: 0; }
+    .gallery-item img { width: 100%; max-width: 100%; border-radius: 12px; display: block; box-shadow: 0 2px 12px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s; }
+    .gallery-item img:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+    .gallery-item figcaption { font-size: 0.82rem; color: var(--muted); margin-top: 0.5rem; text-align: center; line-height: 1.5; }
+    .gallery-item.full { grid-column: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .hero { min-height: 560px; }
+      .hero-content h1 { font-size: 2rem; }
+      section { padding: 2.5rem 1.2rem; }
+      section h2 { font-size: 1.4rem; }
+      .hero-buttons { flex-direction: column; }
+      .highlight-grid { grid-template-columns: 1fr; }
+      .value-grid { grid-template-columns: 1fr; }
+      .outcomes-grid { grid-template-columns: 1fr; }
+      .info-grid { grid-template-columns: 1fr; }
+      .includes-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .float-contact { display: block; }
+      .qr-img { width: 180px; height: 180px; }
+      .top-nav { flex-direction: column; align-items: flex-start; }
+    }
+  
+    /* === Logo styles === */
+    .nav-brand-logo { height: 38px; width: auto; display: block; }
+    .footer-logo-wrap { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
+    .footer-logo-circular { height: 56px; width: auto; display: block; }
+    .footer-logo-horizontal { height: 40px; width: auto; display: block; }
+    @media (max-width: 768px) {
+      .nav-brand-logo { height: 30px; }
+      .footer-logo-circular { height: 48px; }
+      .footer-logo-horizontal { height: 34px; }
+    }
+
+</style>
+</head>
+<body>
+  <article class="page">
+
+    <!-- ========== 顶部导航 ========== -->
+    <nav class="top-nav">
+      <a href="tianze-outdoor.html" class="nav-brand"><img src="assets/logo-horizontal.png" alt="天泽户外" class="nav-brand-logo" style="height:38px;"></a>
+      <div class="nav-links">
+        <a href="activity-1.html">AHA急救</a>
+        <a href="activity-2.html">科莫多LIVE</a>
+        <a href="activity-3.html">楠溪江·雁荡山</a>
+        <a href="activity-4.html">鹿营地</a>
+        <a href="activity-5.html">科莫多探险</a>
+        <a href="more-activities.html">更多活动</a>
+      </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" style="padding:0;">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="hero-badge">印尼 · 科莫多 · 史前巨兽探险</span>
+        <h1>科莫多探险<br>与史前巨兽面对面</h1>
+        <p class="subtitle">站在一种活了上百万年的生物面前，重新理解"野"，也重新理解"时间"。</p>
+        <p class="tagline">鹿爸亲自带队，小规模深入探险。这不是观光，而是一次真正的野外相遇。</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">扫码加微信，了解探险</a>
+          <a href="#highlights" class="btn btn-outline">查看探险内容</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 探险介绍 ========== -->
+    <section class="intro-section" id="about">
+      <div class="section-tag">关于这次探险</div>
+      <h2>去见一种<br>和恐龙同时代的生物</h2>
+      <div class="intro-text">
+        <p>科莫多巨蜥，现存世界上最大的蜥蜴，与恐龙同处一个时代，在这片岛屿上存活了上百万年。它是真正的顶级掠食者，也是地球上少数还能在野外近距离观察的"史前巨兽"。</p>
+        <p>这次探险，我们要带孩子去它的栖息地，在专业向导带领下，真正走进它的领地，面对面地观察它。这不是隔着玻璃看动物园，而是站在它生活的荒野里，感受一种古老、原始、不容轻视的生命力量。</p>
+      </div>
+      <div class="philosophy-quote">
+        <p class="quote-text">在一种活了上百万年的生命面前，人会重新理解自己的位置。</p>
+      </div>
+      <div class="key-note"><strong>探险，不是冒险：</strong>所有近距离观察都在国家公园保护区和专业向导带领下进行，安全是底线。我们追求的是真实的震撼，而不是刺激。</div>
+    </section>
+
+    <!-- ========== 探险内容 ========== -->
+    <section id="highlights">
+      <div class="section-tag">探险内容</div>
+      <h2>四段深入荒野的旅程</h2>
+      <p class="section-desc">每一项都围绕"走进真实的野外科莫多"展开，不是走马观花。</p>
+      <div class="highlight-grid">
+        <div class="highlight-card">
+          <div class="hc-icon">追踪</div>
+          <h3>追踪科莫多巨蜥</h3>
+          <p>在国家公园保护区，跟随专业向导徒步追踪科莫多龙，近距离观察它的形态、行为和领地，听它如何称王百万年。</p>
+        </div>
+        <div class="highlight-card">
+          <div class="hc-icon">深海</div>
+          <h3>原始海域浮潜</h3>
+          <p>科莫多周边海域保持着原始的珊瑚和海洋生态。潜入水中，和海龟、鱼群同游，认识巨蜥之外另一个同样野的世界。</p>
+        </div>
+        <div class="highlight-card">
+          <div class="hc-icon">荒野</div>
+          <h3>热带荒野徒步</h3>
+          <p>穿越热带草原和海岸线，用脚步丈量巨蜥生活的岛屿，理解一种生物和一片土地之间的关系。</p>
+        </div>
+        <div class="highlight-card">
+          <div class="hc-icon">星空</div>
+          <h3>夜间观察与星空</h3>
+          <p>在远离城市灯光的岛屿，看南半球的星空。白天的巨兽和夜晚的宇宙，一起重新校准人对"大"的理解。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 这次探险培养什么 ========== -->
+    <section>
+      <div class="section-tag">为什么值得</div>
+      <h2>一次探险，四重收获</h2>
+      <div class="value-grid">
+        <div class="value-card">
+          <div class="vc-icon">敬畏</div>
+          <h3>理解生命的尺度</h3>
+          <p>在巨兽面前，人会真切地感受到自己的渺小，也学会对其他生命保持敬畏。</p>
+        </div>
+        <div class="value-card">
+          <div class="vc-icon">勇气</div>
+          <h3>走进真正的未知</h3>
+          <p>离开熟悉的环境，去一个完全陌生的地方，本身就是一种勇气的练习。</p>
+        </div>
+        <div class="value-card">
+          <div class="vc-icon">观察</div>
+          <h3>读懂荒野的信号</h3>
+          <p>学会用眼睛和耳朵去理解一个陌生的生态系统，这是书本教不会的能力。</p>
+        </div>
+        <div class="value-card">
+          <div class="vc-icon">沉淀</div>
+          <h3>把震撼变成认知</h3>
+          <p>不只是"看过了"，而是通过复盘和分享，把这次经历沉淀成属于自己的认知。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 图片画廊 ========== -->
+    <!-- 注意：以下图片为本地占位，请替换为实际的科莫多探险微信图床链接（mmbiz.qpic.cn） -->
+    <section class="gallery-section">
+      <div class="section-tag">现场画面</div>
+      <h2>走进它的领地</h2>
+      <div class="gallery-grid">
+        <figure class="gallery-item full">
+          <img src="assets/sailing_snorkel.jpg" alt="科莫多海域">
+          <figcaption>巨蜥生活的岛屿，被原始的海洋环绕。</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/sea_sunset.jpg" alt="荒野日落">
+          <figcaption>荒野的日落，是每天的边界。</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/sailing_bay.jpg" alt="海湾">
+          <figcaption>每一个海湾，都藏着另一个世界。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ========== 收获 ========== -->
+    <section class="intro-section">
+      <div class="section-tag">孩子会带走什么</div>
+      <h2>不只是看过一只巨蜥</h2>
+      <div class="outcomes-grid">
+        <div class="outcome-block">
+          <h3>认知与眼界</h3>
+          <ul>
+            <li><strong>真实的自然认知</strong>：理解一种生物和一片生态系统的关系</li>
+            <li><strong>世界观的拓展</strong>：见过世界的"野"，才更懂珍惜"安全"</li>
+            <li><strong>跨文化体验</strong>：在异国的荒野里，理解不同的生活方式</li>
+          </ul>
+        </div>
+        <div class="outcome-block">
+          <h3>心理与能力</h3>
+          <ul>
+            <li><strong>胆识</strong>：在安全前提下，敢于面对未知和庞大</li>
+            <li><strong>观察力</strong>：学会在荒野里捕捉和解读信号</li>
+            <li><strong>表达</strong>：把这段经历讲给别人听的能力</li>
+          </ul>
+        </div>
+      </div>
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="ic-label">同行方式</div>
+          <div class="ic-value">鹿爸亲自带队</div>
+        </div>
+        <div class="info-card">
+          <div class="ic-label">规模</div>
+          <div class="ic-value">小规模，名额有限</div>
+        </div>
+        <div class="info-card">
+          <div class="ic-label">地点</div>
+          <div class="ic-value">印尼 · 科莫多</div>
+          <div class="ic-detail">史前巨兽栖息地</div>
+        </div>
+        <div class="info-card">
+          <div class="ic-label">报名</div>
+          <div class="ic-value">需提前沟通确认</div>
+        </div>
+      </div>
+      <div class="includes-grid">
+        <div class="include-block">
+          <h4>本次探险包含</h4>
+          <ul>
+            <li>科莫多巨蜥追踪与保护区活动</li>
+            <li>浮潜、徒步等全部探险内容</li>
+            <li>专业向导与安全保障</li>
+            <li>主理人全程同行陪伴</li>
+          </ul>
+        </div>
+        <div class="include-block excludes">
+          <h4>不包含 / 需自理</h4>
+          <ul>
+            <li>国际往返机票与签证</li>
+            <li>个人旅行保险（需自行购买）</li>
+            <li>个人装备与特殊用品</li>
+            <li>行程外个人消费</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 报名联系 ========== -->
+    <section class="contact-section" id="contact">
+      <div class="contact-card">
+        <div class="section-tag">报名方式</div>
+        <h2>扫码加鹿爸微信，先聊聊是否适合</h2>
+        <p class="contact-desc">这是一次需要认真准备的远行探险。请先加微信沟通，确认行程安排、孩子情况都合适后，再确认报名。</p>
+        <div class="qr-area">
+          <div class="qr-img"><img src="assets/luba_wechat_qr.png" alt="鹿爸微信二维码"></div>
+          <p class="qr-remark">长按或扫码，加鹿爸微信</p>
+        </div>
+        <div class="contact-info">
+          <div class="contact-info-item"><span class="ci-label">联系人</span><span class="ci-text">鹿爸 · 章松（天泽户外创始人）</span></div>
+          <div class="contact-info-item"><span class="ci-label">方式</span><span class="ci-text">微信沟通，确认行程后再报名</span></div>
+          <div class="contact-info-item"><span class="ci-label">提醒</span><span class="ci-text">探险名额有限，建议尽早联系</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 更多活动 ========== -->
+    <section class="back-link-section" style="max-width:100%;">
+      <h2>还有这些活动，值得看看</h2>
+      <p>同一个团队，同一种认真。每个活动都是真实陪伴，不是流水线产品。</p>
+      <div>
+        <a href="activity-1.html" class="back-btn">AHA美国心脏协会急救课程</a>
+        <a href="activity-2.html" class="back-btn">科莫多岛全球LIVE夏令营</a>
+        <a href="activity-3.html" class="back-btn">楠溪江荒野生存+雁荡山探险</a>
+        <a href="activity-4.html" class="back-btn">鹿营地·森林自然学校</a>
+        <a href="more-activities.html" class="back-btn outline">更多活动</a>
+        <a href="tianze-outdoor.html" class="back-btn outline">了解天泽户外</a>
+      </div>
+    </section>
+
+    <!-- ========== 底部 ========== -->
+    <footer>
+      <div class="footer-logo-wrap"><img src="assets/logo-circular.png" alt="天泽户外 徽标" class="footer-logo-circular" style="height:56px;"><img src="assets/logo-horizontal.png" alt="天泽户外" class="footer-logo-horizontal" style="height:40px;"></div>
+      <div style="font-family:var(--font-display); font-size:1.2rem; font-weight:700; color:var(--accent); letter-spacing:0.05em; margin-bottom:0.3rem;">天泽户外</div>
+      <p style="font-size:0.78rem; color:var(--muted);">创办于 1999 年 · 杭州天泽户外运动咨询有限公司</p>
+      <div class="brand" style="margin-top:0.6rem;">天泽户外 · 科莫多探险·与史前巨兽面对面</div>
+      <p>杭州天泽户外运动咨询有限公司 · 创办于1999年 · 鹿爸·章松</p>
+      <p style="margin-top:0.3rem;">看见 · 自然养育 · 生长其体魄，强健其精神</p>
+    </footer>
+
+  </article>
+
+  <a href="#contact" class="float-contact">扫码加微信，了解探险</a>
+
+  <script>
+    (function() {
+      var floatBtn = document.querySelector('.float-contact');
+      var contactSection = document.getElementById('contact');
+      if (!floatBtn || !contactSection) return;
+      window.addEventListener('scroll', function() {
+        var rect = contactSection.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          floatBtn.style.display = 'none';
+        } else {
+          floatBtn.style.display = window.innerWidth <= 768 ? 'block' : 'none';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

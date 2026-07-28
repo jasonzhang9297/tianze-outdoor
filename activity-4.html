@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>鹿营地 · 行走的森林自然学校 | 天泽户外</title>
+  <style>
+    @font-face { font-family: 'NationalPark'; src: url('./_shared/fonts/NationalPark-Regular.ttf') format('truetype'); font-weight: 400; }
+    @font-face { font-family: 'NationalPark'; src: url('./_shared/fonts/NationalPark-Bold.ttf') format('truetype'); font-weight: 700; }
+    @font-face { font-family: 'Outfit'; src: url('./_shared/fonts/Outfit-Regular.ttf') format('truetype'); font-weight: 400; }
+    @font-face { font-family: 'Outfit'; src: url('./_shared/fonts/Outfit-Bold.ttf') format('truetype'); font-weight: 700; }
+    @font-face { font-family: 'DMMono'; src: url('./_shared/fonts/DMMono-Regular.ttf') format('truetype'); font-weight: 400; }
+  </style>
+  <style>
+    :root {
+      --bg: #f8f5f0; --bg2: #f0ebe2; --bg3: #e8e0d0;
+      --ink: #2a2520; --muted: #7a7065; --rule: #d9d0c3;
+      --forest: #3a5a40; --soil: #8b6f47; --sun: #e09a3a; --sea: #3d8a9a;
+      --grass: #6b8e4e; --grass-light: #8db86a; --grass-pale: #e8f0e0;
+      --bark: #6d5b4a; --leaf: #4a7c3a;
+      --accent: #3a5a40; --accent2: #e09a3a;
+      --font: 'Outfit', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      --font-display: 'NationalPark', 'PingFang SC', serif;
+      --font-mono: 'DMMono', monospace;
+      --max: 960px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { font-family: var(--font); color: var(--ink); background: var(--bg); line-height: 1.75; -webkit-font-smoothing: antialiased; }
+    article.page { max-width: var(--max); margin: 0 auto; }
+    .top-nav { background: var(--bg2); border-bottom: 1px solid var(--rule); padding: 0.7rem 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; position: sticky; top: 0; z-index: 50; }
+    .nav-brand { font-family: var(--font-display); font-size: 0.9rem; color: var(--ink); font-weight: 700; }
+    .nav-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .nav-links a { font-size: 0.82rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent2); }
+    .hero { position: relative; width: 100%; min-height: 620px; overflow: hidden; display: flex; align-items: center; background: linear-gradient(135deg, #1a3a1e 0%, #2d5a2f 30%, #3a5a40 60%, #6b8e4e 100%); }
+    .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(26,58,30,0.65) 0%, rgba(45,90,47,0.3) 50%, rgba(107,142,78,0.1) 100%); }
+    .hero-content { position: relative; z-index: 2; padding: 4rem 2rem; max-width: 640px; color: #fff; animation: fadeUp 1.2s ease-out; }
+    .hero-badge { display: inline-block; font-size: 0.78rem; letter-spacing: 0.08em; color: #fff; border: 1px solid rgba(255,255,255,0.5); padding: 0.3rem 1rem; border-radius: 20px; margin-bottom: 1.5rem; backdrop-filter: blur(6px); background: rgba(26,58,30,0.4); }
+    .hero-content h1 { font-family: var(--font-display); font-size: 2.6rem; font-weight: 700; line-height: 1.25; margin-bottom: 1rem; text-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+    .hero-content .subtitle { font-size: 1.05rem; color: rgba(255,255,255,0.9); font-weight: 400; margin-bottom: 0.6rem; }
+    .hero-content .tagline { font-size: 0.92rem; color: rgba(255,255,255,0.8); margin-bottom: 1rem; font-style: italic; }
+    .hero-buttons { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+    .btn { display: inline-block; padding: 0.7rem 1.6rem; border-radius: 30px; font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; border: none; }
+    .btn-primary { background: var(--accent2); color: #fff; box-shadow: 0 4px 16px rgba(224,154,58,0.4); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(224,154,58,0.5); }
+    .btn-outline { background: rgba(255,255,255,0.1); color: #fff; border: 1.5px solid rgba(255,255,255,0.5); backdrop-filter: blur(6px); }
+    .btn-outline:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    section { padding: 3.5rem 2rem; }
+    .section-tag { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--forest); margin-bottom: 0.5rem; }
+    section h2 { font-family: var(--font-display); font-size: 1.7rem; line-height: 1.35; margin-bottom: 0.8rem; color: var(--ink); }
+    section .section-desc { font-size: 0.92rem; color: var(--muted); margin-bottom: 1.5rem; max-width: 600px; }
+    .key-note { background: var(--bg2); border-radius: 10px; padding: 0.8rem 1.2rem; font-size: 0.88rem; color: var(--ink); border-left: 4px solid var(--forest); margin: 1rem 0; }
+    .key-note strong { color: var(--forest); }
+    .intro-section { background: linear-gradient(180deg, var(--grass-pale) 0%, var(--bg) 40%); }
+    .intro-text { font-size: 0.92rem; color: var(--muted); line-height: 1.85; max-width: 680px; margin: 0 auto; }
+    .intro-text p { margin-bottom: 0.8rem; }
+    .intro-text p strong { color: var(--ink); }
+    .philosophy-quote { background: var(--bg); border-radius: 14px; padding: 2rem 1.8rem; border: 1px solid var(--rule); margin: 1.5rem auto; max-width: 680px; text-align: center; position: relative; }
+    .philosophy-quote::before { content: '"'; position: absolute; top: -0.5rem; left: 1.2rem; font-family: var(--font-display); font-size: 3rem; color: var(--rule); line-height: 1; }
+    .philosophy-quote .quote-text { font-family: var(--font-display); font-size: 1.2rem; color: var(--ink); line-height: 1.6; }
+    .course-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.5rem 0; }
+    .course-card { background: var(--bg2); border-radius: 14px; padding: 1.5rem 1.2rem; border: 1px solid var(--rule); text-align: center; transition: transform 0.25s, box-shadow 0.25s; }
+    .course-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .course-card .cc-icon { font-family: var(--font-display); font-size: 1.5rem; color: var(--forest); margin-bottom: 0.5rem; }
+    .course-card h3 { font-family: var(--font-display); font-size: 1rem; margin-bottom: 0.4rem; }
+    .course-card p { font-size: 0.8rem; color: var(--muted); line-height: 1.65; }
+    .nature-edu-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+    .nature-edu-card { background: var(--bg2); border-radius: 14px; padding: 1.5rem; border: 1px solid var(--rule); border-top: 4px solid var(--forest); }
+    .nature-edu-card:nth-child(2) { border-top-color: var(--grass); }
+    .nature-edu-card:nth-child(3) { border-top-color: var(--accent2); }
+    .nature-edu-card .ne-num { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 0.3rem; }
+    .nature-edu-card h3 { font-family: var(--font-display); font-size: 1.05rem; margin-bottom: 0.5rem; }
+    .nature-edu-card p { font-size: 0.84rem; color: var(--muted); line-height: 1.75; }
+    .theory-section { background: linear-gradient(135deg, var(--forest) 0%, #2d4836 100%); border-radius: 18px; padding: 2.5rem 2rem; color: #fff; margin: 1.5rem 0; }
+    .theory-section .theory-code { font-family: var(--font-mono); font-size: 2.2rem; font-weight: 700; letter-spacing: 0.05em; color: var(--sun); margin-bottom: 0.5rem; text-align: center; }
+    .theory-section .theory-name { font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 0.8rem; text-align: center; }
+    .theory-section .theory-tagline { font-size: 0.9rem; color: rgba(255,255,255,0.75); max-width: 480px; margin: 0 auto 1.5rem; text-align: center; }
+    .theory-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .theory-card { background: rgba(255,255,255,0.1); border-radius: 12px; padding: 1.3rem; border: 1px solid rgba(255,255,255,0.15); }
+    .theory-card .tc-label { font-family: var(--font-mono); font-size: 0.75rem; color: var(--sun); margin-bottom: 0.4rem; }
+    .theory-card .tc-title { font-family: var(--font-display); font-size: 1rem; margin-bottom: 0.4rem; color: #fff; }
+    .theory-card .tc-desc { font-size: 0.8rem; color: rgba(255,255,255,0.7); line-height: 1.7; }
+    .luba-bio-section { background: var(--bg); }
+    .luba-card { background: var(--bg2); border-radius: 18px; padding: 2rem; border: 1px solid var(--rule); }
+    .luba-name { font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 0.3rem; }
+    .luba-role { font-size: 0.85rem; color: var(--forest); margin-bottom: 0.8rem; }
+    .luba-bio p { font-size: 0.88rem; color: var(--muted); line-height: 1.85; margin-bottom: 0.6rem; }
+    .luba-bio p strong { color: var(--ink); }
+    .luba-credentials { margin-top: 1rem; }
+    .credential-item { display: flex; gap: 0.6rem; align-items: flex-start; padding: 0.3rem 0; }
+    .credential-item .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--forest); margin-top: 8px; flex-shrink: 0; }
+    .credential-item .text { font-size: 0.83rem; color: var(--muted); }
+    .contact-section { background: var(--bg); }
+    .contact-card { background: linear-gradient(135deg, var(--bg2) 0%, var(--bg3) 100%); border-radius: 20px; padding: 2.5rem 2rem; text-align: center; border: 1px solid var(--rule); }
+    .contact-card h2 { font-family: var(--font-display); font-size: 1.7rem; margin-bottom: 0.8rem; }
+    .contact-card .contact-desc { font-size: 0.9rem; color: var(--muted); max-width: 480px; margin: 0 auto 1.5rem; line-height: 1.8; }
+    .qr-area { margin: 1.5rem auto; }
+    .qr-img { width: 200px; height: 200px; margin: 0 auto 0.5rem; border-radius: 16px; overflow: hidden; border: 3px solid var(--bg); box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+    .qr-img img { width: 100%; height: 100%; object-fit: cover; }
+    .qr-remark { font-size: 0.85rem; color: var(--forest); font-weight: 600; margin-top: 0.8rem; }
+    .contact-info { max-width: 420px; margin: 1.5rem auto 0; text-align: left; }
+    .contact-info-item { display: flex; gap: 0.8rem; padding: 0.6rem 0; border-bottom: 1px solid var(--rule); }
+    .contact-info-item:last-child { border-bottom: none; }
+    .ci-label { font-family: var(--font-mono); font-size: 0.75rem; color: var(--forest); min-width: 70px; padding-top: 2px; }
+    .ci-text { font-size: 0.85rem; color: var(--ink); }
+    .back-link-section { background: linear-gradient(135deg, #1a3a1e 0%, #2d5a2f 100%); color: #fff; text-align: center; padding: 3rem 2rem; }
+    .back-link-section h2 { font-family: var(--font-display); font-size: 1.5rem; color: #fff; margin-bottom: 0.6rem; }
+    .back-link-section p { font-size: 0.9rem; color: rgba(255,255,255,0.7); max-width: 440px; margin: 0 auto 1.5rem; }
+    .back-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.7rem 1.8rem; border-radius: 30px; background: var(--accent2); color: #fff; font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; margin: 0.3rem; }
+    .back-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(224,154,58,0.45); }
+    .back-btn.outline { background: rgba(255,255,255,0.1); border: 1.5px solid rgba(255,255,255,0.5); }
+    footer { padding: 1.5rem 2rem; text-align: center; background: var(--bg2); border-top: 1px solid var(--rule); }
+    footer .brand { font-family: var(--font-display); font-size: 0.95rem; color: var(--ink); margin-bottom: 0.2rem; }
+    footer p { font-size: 0.78rem; color: var(--muted); }
+    .float-contact { position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%); background: var(--forest); color: #fff; padding: 0.65rem 1.8rem; border-radius: 30px; font-size: 0.85rem; font-weight: 600; text-decoration: none; box-shadow: 0 4px 16px rgba(58,90,64,0.4); z-index: 100; display: none; }
+    /* === 图片画廊 === */
+    .gallery-section { background: var(--bg); }
+    .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1.5rem 0; }
+    .gallery-item { margin: 0; }
+    .gallery-item img { width: 100%; max-width: 100%; border-radius: 12px; display: block; box-shadow: 0 2px 12px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s; }
+    .gallery-item img:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+    .gallery-item figcaption { font-size: 0.82rem; color: var(--muted); margin-top: 0.5rem; text-align: center; line-height: 1.5; }
+    .gallery-item.full { grid-column: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .hero { min-height: 560px; }
+      .hero-content h1 { font-size: 1.9rem; }
+      section { padding: 2.5rem 1.2rem; }
+      section h2 { font-size: 1.4rem; }
+      .hero-buttons { flex-direction: column; }
+      .course-grid { grid-template-columns: 1fr 1fr; }
+      .nature-edu-grid { grid-template-columns: 1fr; }
+      .theory-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .float-contact { display: block; }
+      .qr-img { width: 180px; height: 180px; }
+      .top-nav { flex-direction: column; align-items: flex-start; }
+    }
+  
+    /* === Logo styles === */
+    .nav-brand-logo { height: 38px; width: auto; display: block; }
+    .footer-logo-wrap { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
+    .footer-logo-circular { height: 56px; width: auto; display: block; }
+    .footer-logo-horizontal { height: 40px; width: auto; display: block; }
+    @media (max-width: 768px) {
+      .nav-brand-logo { height: 30px; }
+      .footer-logo-circular { height: 48px; }
+      .footer-logo-horizontal { height: 34px; }
+    }
+
+</style>
+</head>
+<body>
+  <article class="page">
+
+    <!-- ========== 顶部导航 ========== -->
+    <nav class="top-nav">
+      <a href="tianze-outdoor.html" class="nav-brand"><img src="assets/logo-horizontal.png" alt="天泽户外" class="nav-brand-logo" style="height:38px;"></a>
+      <div class="nav-links">
+        <a href="activity-1.html">AHA急救</a>
+        <a href="activity-2.html">科莫多LIVE</a>
+        <a href="activity-3.html">楠溪江·雁荡山</a>
+        <a href="activity-4.html">鹿营地</a>
+        <a href="activity-5.html">科莫多探险</a>
+        <a href="more-activities.html">更多活动</a>
+      </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" style="padding:0;">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="hero-badge">鹿营地 · 行走的森林自然学校</span>
+        <h1>鹿营地<br>行走的森林自然学校</h1>
+        <p class="subtitle">把课堂搬进森林，让孩子在真实的营地生活里，学会观察、动手和负责。</p>
+        <p class="tagline">不是一次性的活动，而是一段持续生长的自然教育。鹿爸主理，小规模同行。</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">扫码加微信，了解营地</a>
+          <a href="#approach" class="btn btn-outline">查看教育理念</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 关于鹿营地 ========== -->
+    <section class="intro-section" id="about">
+      <div class="section-tag">关于鹿营地</div>
+      <h2>森林，就是最好的教室</h2>
+      <div class="intro-text">
+        <p><strong>鹿营地·行走的森林自然学校</strong>，把教育的现场从教室搬到真实的森林和营地。在这里，孩子不是被灌输知识，而是在自然观察、营地建设和真实任务中，主动去发现和学习。</p>
+        <p>我们相信，孩子需要的不是更多屏幕里的信息，而是用眼睛看、用手摸、用脚走的真实体验。当他在森林里认出一棵树、在营地里生起一堆火、为一个小项目负责到底，他学到的东西会真正长在自己身上。</p>
+      </div>
+      <div class="philosophy-quote">
+        <p class="quote-text">让孩子在真实的世界里，慢慢长成一个能照顾自己、也愿意为他人负责的人。</p>
+      </div>
+    </section>
+
+    <!-- ========== 教育理念 ========== -->
+    <section id="approach">
+      <div class="section-tag">教育理念</div>
+      <h2>我们怎么带孩子学</h2>
+      <p class="section-desc">不是把学校搬到户外，而是用自然的方式，重新理解"学习"这件事。</p>
+      <div class="nature-edu-grid">
+        <div class="nature-edu-card">
+          <div class="ne-num">01</div>
+          <h3>自然观察</h3>
+          <p>带孩子用感官去认识森林——植物、动物、天气、土壤。观察是所有科学和审美的起点。</p>
+        </div>
+        <div class="nature-edu-card">
+          <div class="ne-num">02</div>
+          <h3>营地建设</h3>
+          <p>从搭帐篷到分工协作，在真实的营地生活里学习动手、合作和生活自理。</p>
+        </div>
+        <div class="nature-edu-card">
+          <div class="ne-num">03</div>
+          <h3>PBL 项目式学习</h3>
+          <p>围绕一个真实的问题展开探究，让孩子在解决问题的过程中主动学习，而不是被动接受。</p>
+        </div>
+      </div>
+      <div class="theory-section">
+        <div class="theory-code">PBL</div>
+        <div class="theory-name">项目式学习 · Project-Based Learning</div>
+        <p class="theory-tagline">让孩子为一个真实的问题去学习，而不是为了一张试卷。</p>
+        <div class="theory-grid">
+          <div class="theory-card">
+            <div class="tc-label">第一步</div>
+            <div class="tc-title">真实任务</div>
+            <div class="tc-desc">从一个真实的、孩子能感知到的问题出发，而不是抽象的题目。</div>
+          </div>
+          <div class="theory-card">
+            <div class="tc-label">第二步</div>
+            <div class="tc-title">自主探究</div>
+            <div class="tc-desc">孩子自己去观察、提问、尝试，老师是引导者而不是答案的提供者。</div>
+          </div>
+          <div class="theory-card">
+            <div class="tc-label">第三步</div>
+            <div class="tc-title">成果呈现</div>
+            <div class="tc-desc">把学习变成一个看得见的成果，让孩子体验到"我做到了"的成就感。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 营地活动 ========== -->
+    <section>
+      <div class="section-tag">营地活动</div>
+      <h2>每一天都在真实里学习</h2>
+      <div class="course-grid">
+        <div class="course-card">
+          <div class="cc-icon">观察</div>
+          <h3>自然观察</h3>
+          <p>动植物识别、物候记录、感官训练，打开孩子认识世界的另一双眼睛。</p>
+        </div>
+        <div class="course-card">
+          <div class="cc-icon">动手</div>
+          <h3>营地生活</h3>
+          <p>搭建营地、生火做饭、工具使用，在真实生活里练出动手能力。</p>
+        </div>
+        <div class="course-card">
+          <div class="cc-icon">探究</div>
+          <h3>PBL 项目</h3>
+          <p>围绕森林和营地的真实问题展开项目，把学习变成解决真实问题的过程。</p>
+        </div>
+      </div>
+      <div class="key-note"><strong>营地信息：</strong>小规模同行，鹿爸主理，名额有限。具体营期与安排以微信沟通后确认为准。</div>
+    </section>
+
+    <!-- ========== 图片画廊 ========== -->
+    <section class="gallery-section">
+      <div class="section-tag">营地画面</div>
+      <h2>真实的营地生活</h2>
+      <div class="gallery-grid">
+        <figure class="gallery-item full">
+          <img src="assets/hero_forest_sunrise.jpg" alt="森林营地">
+          <figcaption>森林，就是最好的教室。</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/camping_night.jpg" alt="营地夜晚">
+          <figcaption>夜晚的营地，安静而真实。</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/hiking.jpg" alt="自然探索">
+          <figcaption>在自然里，每一步都是学习。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ========== 主理人 ========== -->
+    <section class="luba-bio-section">
+      <div class="section-tag">主理人</div>
+      <h2>鹿爸 · 章松</h2>
+      <div class="luba-card">
+        <div class="luba-name">鹿爸 · 章松</div>
+        <div class="luba-role">天泽户外创始人 · 27年自然教育实践者</div>
+        <div class="luba-bio">
+          <p>从 1999 年创办天泽户外至今，<strong>章松</strong>一直带孩子走进真实的自然。他相信教育不是把知识塞给孩子，而是把孩子放进真实的世界，让他自己去长。</p>
+          <p>鹿营地·行走的森林自然学校，是他多年来自然教育理念的集中落地——用森林当教室，用真实任务当教材，用认真的陪伴当方法。</p>
+        </div>
+        <div class="luba-credentials">
+          <div class="credential-item"><span class="dot"></span><span class="text">天泽户外创始人，创办于 1999 年</span></div>
+          <div class="credential-item"><span class="dot"></span><span class="text">27 年自然教育与户外带队经验</span></div>
+          <div class="credential-item"><span class="dot"></span><span class="text">主理人亲自同行，深度参与每一个环节</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 报名联系 ========== -->
+    <section class="contact-section" id="contact">
+      <div class="contact-card">
+        <div class="section-tag">报名方式</div>
+        <h2>扫码加鹿爸微信，了解营地</h2>
+        <p class="contact-desc">每个营期名额有限，且需要确认孩子情况是否适合。请先加微信沟通，了解营期安排后再确认报名。</p>
+        <div class="qr-area">
+          <div class="qr-img"><img src="assets/luba_wechat_qr.png" alt="鹿爸微信二维码"></div>
+          <p class="qr-remark">长按或扫码，加鹿爸微信</p>
+        </div>
+        <div class="contact-info">
+          <div class="contact-info-item"><span class="ci-label">联系人</span><span class="ci-text">鹿爸 · 章松（天泽户外创始人）</span></div>
+          <div class="contact-info-item"><span class="ci-label">方式</span><span class="ci-text">微信沟通，确认营期后再报名</span></div>
+          <div class="contact-info-item"><span class="ci-label">提醒</span><span class="ci-text">小规模名额有限，建议提前联系</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 更多活动 ========== -->
+    <section class="back-link-section" style="max-width:100%;">
+      <h2>还有这些活动，值得看看</h2>
+      <p>同一个团队，同一种认真。每个活动都是真实陪伴，不是流水线产品。</p>
+      <div>
+        <a href="activity-1.html" class="back-btn">AHA美国心脏协会急救课程</a>
+        <a href="activity-2.html" class="back-btn">科莫多岛全球LIVE夏令营</a>
+        <a href="activity-3.html" class="back-btn">楠溪江荒野生存+雁荡山探险</a>
+        <a href="activity-5.html" class="back-btn">科莫多探险·与史前巨兽面对面</a>
+        <a href="more-activities.html" class="back-btn outline">更多活动</a>
+        <a href="tianze-outdoor.html" class="back-btn outline">了解天泽户外</a>
+      </div>
+    </section>
+
+    <!-- ========== 底部 ========== -->
+    <footer>
+      <div class="footer-logo-wrap"><img src="assets/logo-circular.png" alt="天泽户外 徽标" class="footer-logo-circular" style="height:56px;"><img src="assets/logo-horizontal.png" alt="天泽户外" class="footer-logo-horizontal" style="height:40px;"></div>
+      <div style="font-family:var(--font-display); font-size:1.2rem; font-weight:700; color:var(--accent); letter-spacing:0.05em; margin-bottom:0.3rem;">天泽户外</div>
+      <p style="font-size:0.78rem; color:var(--muted);">创办于 1999 年 · 杭州天泽户外运动咨询有限公司</p>
+      <div class="brand" style="margin-top:0.6rem;">天泽户外 · 鹿营地·行走的森林自然学校</div>
+      <p>杭州天泽户外运动咨询有限公司 · 创办于1999年 · 鹿爸·章松</p>
+      <p style="margin-top:0.3rem;">看见 · 自然养育 · 生长其体魄，强健其精神</p>
+    </footer>
+
+  </article>
+
+  <a href="#contact" class="float-contact">扫码加微信，了解营地</a>
+
+  <script>
+    (function() {
+      var floatBtn = document.querySelector('.float-contact');
+      var contactSection = document.getElementById('contact');
+      if (!floatBtn || !contactSection) return;
+      window.addEventListener('scroll', function() {
+        var rect = contactSection.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          floatBtn.style.display = 'none';
+        } else {
+          floatBtn.style.display = window.innerWidth <= 768 ? 'block' : 'none';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

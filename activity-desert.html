@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>腾格里沙漠亲子挑战赛 · 2026国庆节预告 | 天泽户外</title>
+
+  <style>
+    @font-face { font-family: 'NationalPark'; src: url('./_shared/fonts/NationalPark-Regular.ttf') format('truetype'); font-weight: 400; }
+    @font-face { font-family: 'NationalPark'; src: url('./_shared/fonts/NationalPark-Bold.ttf') format('truetype'); font-weight: 700; }
+    @font-face { font-family: 'Outfit'; src: url('./_shared/fonts/Outfit-Regular.ttf') format('truetype'); font-weight: 400; }
+    @font-face { font-family: 'Outfit'; src: url('./_shared/fonts/Outfit-Bold.ttf') format('truetype'); font-weight: 700; }
+    @font-face { font-family: 'DMMono'; src: url('./_shared/fonts/DMMono-Regular.ttf') format('truetype'); font-weight: 400; }
+  </style>
+
+  <style>
+    :root {
+      --bg: #f8f5f0; --bg2: #f0ebe2; --bg3: #e8e0d0;
+      --ink: #2a2520; --muted: #7a7065; --rule: #d9d0c3;
+      --forest: #3a5a40; --soil: #8b6f47; --sun: #e09a3a; --sea: #3d8a9a;
+      --sand: #c9a96a; --sand-light: #e8d5b0; --sand-pale: #f5ede0;
+      --desert: #b8860b; --desert-dark: #8b6914;
+      --accent: #3a5a40; --accent2: #e09a3a;
+      --font: 'Outfit', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      --font-display: 'NationalPark', 'PingFang SC', serif;
+      --font-mono: 'DMMono', monospace;
+      --max: 960px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { font-family: var(--font); color: var(--ink); background: var(--bg); line-height: 1.75; -webkit-font-smoothing: antialiased; }
+    article.page { max-width: var(--max); margin: 0 auto; }
+
+    /* === 顶部导航 === */
+    .top-nav { background: var(--bg2); border-bottom: 1px solid var(--rule); padding: 0.7rem 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+    .nav-brand { font-family: var(--font-display); font-size: 0.9rem; color: var(--ink); font-weight: 700; }
+    .nav-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .nav-links a { font-size: 0.82rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent2); }
+
+    /* === Hero === */
+    .hero { position: relative; width: 100%; min-height: 620px; overflow: hidden; display: flex; align-items: center; background: linear-gradient(135deg, #d4a44a 0%, #c9a96a 30%, #b8860b 60%, #8b6914 100%); }
+    .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='600' viewBox='0 0 1200 600'%3E%3Cpath d='M0,400 Q300,350 600,380 T1200,360 L1200,600 L0,600 Z' fill='%238b6914' opacity='0.3'/%3E%3Cpath d='M0,450 Q200,420 400,440 T800,430 T1200,450 L1200,600 L0,600 Z' fill='%236b4f1d' opacity='0.4'/%3E%3C/svg%3E") no-repeat bottom center; background-size: cover; }
+    .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(139,105,20,0.5) 0%, rgba(184,134,11,0.3) 50%, rgba(212,164,74,0.2) 100%); }
+    .hero-content { position: relative; z-index: 2; padding: 4rem 2rem; max-width: 640px; color: #fff; animation: fadeUp 1.2s ease-out; }
+    .hero-badge { display: inline-block; font-size: 0.78rem; letter-spacing: 0.08em; color: #fff; border: 1px solid rgba(255,255,255,0.5); padding: 0.3rem 1rem; border-radius: 20px; margin-bottom: 1.5rem; backdrop-filter: blur(6px); background: rgba(139,105,20,0.4); }
+    .hero-preview-badge { display: inline-block; background: var(--sun); color: #fff; font-size: 0.82rem; font-weight: 700; padding: 0.4rem 1.2rem; border-radius: 20px; margin-bottom: 1.2rem; box-shadow: 0 4px 16px rgba(224,154,58,0.5); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+    .hero-content h1 { font-family: var(--font-display); font-size: 2.8rem; font-weight: 700; line-height: 1.25; margin-bottom: 1rem; text-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+    .hero-content .subtitle { font-size: 1.05rem; color: rgba(255,255,255,0.9); font-weight: 400; margin-bottom: 0.6rem; }
+    .hero-content .tagline { font-size: 0.92rem; color: var(--sand-light); margin-bottom: 1rem; opacity: 0.95; font-style: italic; }
+    .hero-brand-line { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .hero-brand-line .since { font-family: var(--font-mono); font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+    .hero-brand-line .divider { width: 1px; height: 16px; background: rgba(255,255,255,0.3); }
+    .hero-brand-line .loc { font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+    .hero-buttons { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+    .btn { display: inline-block; padding: 0.7rem 1.6rem; border-radius: 30px; font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: transform 0.2s, background 0.2s, box-shadow 0.2s; cursor: pointer; border: none; }
+    .btn-primary { background: var(--accent2); color: #fff; box-shadow: 0 4px 16px rgba(224,154,58,0.4); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(224,154,58,0.5); }
+    .btn-outline { background: rgba(255,255,255,0.1); color: #fff; border: 1.5px solid rgba(255,255,255,0.5); backdrop-filter: blur(6px); }
+    .btn-outline:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* === Section base === */
+    section { padding: 3.5rem 2rem; }
+    .section-tag { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.5rem; }
+    section h2 { font-family: var(--font-display); font-size: 1.7rem; line-height: 1.35; margin-bottom: 0.8rem; color: var(--ink); }
+    section .section-desc { font-size: 0.92rem; color: var(--muted); margin-bottom: 1.5rem; max-width: 600px; }
+    .key-note { background: var(--bg2); border-radius: 10px; padding: 0.8rem 1.2rem; font-size: 0.88rem; color: var(--ink); border-left: 4px solid var(--accent2); margin: 1rem 0; }
+    .key-note strong { color: var(--accent2); }
+
+    /* === 引言区 === */
+    .intro-section { background: linear-gradient(180deg, var(--sand-pale) 0%, var(--bg) 40%); }
+    .intro-quote { font-family: var(--font-display); font-size: 1.3rem; line-height: 1.7; color: var(--ink); text-align: center; max-width: 680px; margin: 0 auto 1.5rem; }
+    .intro-quote em { color: var(--desert-dark); font-style: italic; }
+    .intro-text { font-size: 0.92rem; color: var(--muted); line-height: 1.85; max-width: 680px; margin: 0 auto; }
+    .intro-text p { margin-bottom: 0.8rem; }
+
+    /* === 意义与价值 === */
+    .value-section { background: var(--bg); }
+    .value-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1.5rem 0; }
+    .value-card { background: var(--bg2); border-radius: 14px; padding: 1.5rem; border: 1px solid var(--rule); border-left: 4px solid var(--desert); }
+    .value-card .vc-icon { font-family: var(--font-display); font-size: 1.4rem; color: var(--desert); margin-bottom: 0.5rem; }
+    .value-card h3 { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .value-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.75; }
+    .value-card .vc-quote { font-size: 0.82rem; color: var(--desert-dark); font-style: italic; margin-top: 0.5rem; padding-left: 0.8rem; border-left: 2px solid var(--sand); }
+
+    /* === 日程安排 === */
+    .schedule-section { background: var(--bg2); }
+    .schedule-timeline { position: relative; padding-left: 2rem; margin: 2rem 0; }
+    .schedule-timeline::before { content: ''; position: absolute; left: 8px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(180deg, var(--sun), var(--desert), var(--soil)); border-radius: 2px; }
+    .schedule-item { position: relative; padding-bottom: 1.8rem; }
+    .schedule-item:last-child { padding-bottom: 0; }
+    .schedule-dot { position: absolute; left: -2rem; top: 4px; width: 18px; height: 18px; border-radius: 50%; background: var(--bg); border: 3px solid var(--sun); }
+    .schedule-item:nth-child(2) .schedule-dot { border-color: var(--desert); }
+    .schedule-item:nth-child(3) .schedule-dot { border-color: var(--soil); }
+    .schedule-item:nth-child(4) .schedule-dot { border-color: var(--desert-dark); }
+    .schedule-item:nth-child(5) .schedule-dot { border-color: var(--forest); }
+    .schedule-day { font-family: var(--font-mono); font-size: 0.82rem; font-weight: 700; color: var(--accent2); margin-bottom: 0.2rem; }
+    .schedule-title { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 0.4rem; }
+    .schedule-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.75; }
+    .schedule-desc strong { color: var(--ink); }
+    .schedule-accommodation { display: inline-block; font-size: 0.75rem; color: var(--accent2); background: rgba(224,154,58,0.1); padding: 0.2rem 0.7rem; border-radius: 10px; margin-top: 0.4rem; }
+
+    /* === 收获 === */
+    .outcomes-section { background: var(--bg); }
+    .outcomes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0; }
+    .outcome-block { background: var(--bg2); border-radius: 14px; padding: 1.5rem; border: 1px solid var(--rule); }
+    .outcome-block h3 { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 0.8rem; color: var(--desert-dark); }
+    .outcome-block ul { list-style: none; }
+    .outcome-block ul li { font-size: 0.85rem; color: var(--ink); padding: 0.4rem 0 0.4rem 1.2rem; position: relative; line-height: 1.7; }
+    .outcome-block ul li::before { content: "▸"; position: absolute; left: 0; color: var(--accent2); }
+    .outcome-block ul li strong { color: var(--desert-dark); }
+
+    /* === 报名详情 === */
+    .signup-section { background: linear-gradient(180deg, var(--sand-pale) 0%, var(--bg) 30%); }
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+    .info-card { background: var(--bg); border-radius: 12px; padding: 1.3rem; border: 1px solid var(--rule); text-align: center; }
+    .info-card .ic-label { font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.3rem; }
+    .info-card .ic-value { font-family: var(--font-display); font-size: 1.2rem; color: var(--ink); font-weight: 700; }
+    .info-card .ic-detail { font-size: 0.78rem; color: var(--muted); margin-top: 0.2rem; }
+    .price-row { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; margin: 1.2rem 0; }
+    .price-chip { background: var(--bg); border-radius: 12px; padding: 0.8rem 1.2rem; border: 1px solid var(--rule); text-align: center; min-width: 160px; }
+    .price-chip .chip-label { font-size: 0.72rem; color: var(--muted); margin-bottom: 0.2rem; }
+    .price-chip .chip-price { font-family: var(--font-mono); font-size: 1.2rem; font-weight: 700; color: var(--desert); }
+
+    /* === 后勤保障 === */
+    .logistics-section { background: var(--bg2); }
+    .coach-card { background: var(--bg); border-radius: 14px; padding: 1.8rem; border: 1px solid var(--rule); margin-bottom: 1.5rem; }
+    .coach-card h3 { font-family: var(--font-display); font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--desert-dark); }
+    .coach-creds { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.8rem; }
+    .coach-cred { background: var(--bg2); border: 1px solid var(--rule); border-radius: 20px; padding: 0.3rem 0.9rem; font-size: 0.78rem; color: var(--accent); }
+    .includes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+    .include-block { background: var(--bg); border-radius: 12px; padding: 1.3rem; border: 1px solid var(--rule); }
+    .include-block h4 { font-size: 0.95rem; margin-bottom: 0.6rem; color: var(--desert-dark); }
+    .include-block ul { list-style: none; }
+    .include-block ul li { font-size: 0.82rem; color: var(--muted); padding: 0.2rem 0 0.2rem 1rem; position: relative; }
+    .include-block ul li::before { content: "✓"; position: absolute; left: 0; color: var(--forest); }
+    .include-block.excludes ul li::before { content: "✗"; color: var(--accent2); }
+
+    /* === Q&A === */
+    .qa-section { background: var(--bg); }
+    .qa-item { background: var(--bg2); border-radius: 10px; margin-bottom: 0.5rem; border: 1px solid var(--rule); overflow: hidden; }
+    .qa-q { padding: 0.9rem 1.2rem; cursor: pointer; display: flex; align-items: center; gap: 0.8rem; font-weight: 600; font-size: 0.88rem; }
+    .qa-q .q-icon { color: var(--accent2); font-weight: 700; }
+    .qa-q .toggle { margin-left: auto; color: var(--muted); transition: transform 0.3s; font-size: 1.1rem; }
+    .qa-item.open .toggle { transform: rotate(45deg); }
+    .qa-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.3s; padding: 0 1.2rem; font-size: 0.85rem; color: var(--muted); line-height: 1.75; }
+    .qa-item.open .qa-a { max-height: 300px; padding: 0 1.2rem 0.9rem 2.3rem; }
+
+    /* === 退费政策 === */
+    .policy-section { background: var(--bg2); }
+    .policy-list { background: var(--bg); border-radius: 12px; padding: 1.5rem; border: 1px solid var(--rule); }
+    .policy-list ol { padding-left: 1.2rem; }
+    .policy-list ol li { font-size: 0.85rem; color: var(--muted); padding: 0.3rem 0; line-height: 1.7; }
+    .policy-list ol li strong { color: var(--ink); }
+
+    /* === 联系方式 === */
+    .contact-section { background: var(--bg); }
+    .contact-card { background: linear-gradient(135deg, var(--bg2) 0%, var(--bg3) 100%); border-radius: 20px; padding: 2.5rem 2rem; text-align: center; border: 1px solid var(--rule); }
+    .contact-card h2 { font-family: var(--font-display); font-size: 1.7rem; margin-bottom: 0.8rem; }
+    .contact-card .contact-desc { font-size: 0.9rem; color: var(--muted); max-width: 480px; margin: 0 auto 1.5rem; line-height: 1.8; }
+    .qr-area { margin: 1.5rem auto; }
+    .qr-img { width: 200px; height: 200px; margin: 0 auto 0.5rem; border-radius: 16px; overflow: hidden; border: 3px solid var(--bg); box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+    .qr-img img { width: 100%; height: 100%; object-fit: cover; }
+    .qr-remark { font-size: 0.85rem; color: var(--accent); font-weight: 600; margin-top: 0.8rem; }
+    .contact-info { max-width: 420px; margin: 1.5rem auto 0; text-align: left; }
+    .contact-info-item { display: flex; gap: 0.8rem; padding: 0.6rem 0; border-bottom: 1px solid var(--rule); }
+    .contact-info-item:last-child { border-bottom: none; }
+    .ci-label { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); min-width: 70px; padding-top: 2px; }
+    .ci-text { font-size: 0.85rem; color: var(--ink); }
+
+    /* === 返回链接 === */
+    .back-link-section { background: linear-gradient(135deg, #2a2520 0%, #8b6914 100%); color: #fff; text-align: center; padding: 3rem 2rem; }
+    .back-link-section h2 { font-family: var(--font-display); font-size: 1.5rem; color: #fff; margin-bottom: 0.6rem; }
+    .back-link-section p { font-size: 0.9rem; color: rgba(255,255,255,0.7); max-width: 440px; margin: 0 auto 1.5rem; }
+    .back-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.7rem 1.8rem; border-radius: 30px; background: var(--accent2); color: #fff; font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; margin: 0.3rem; }
+    .back-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(224,154,58,0.45); }
+    .back-btn.outline { background: rgba(255,255,255,0.1); border: 1.5px solid rgba(255,255,255,0.5); }
+
+    /* === 页脚 === */
+    footer { padding: 1.5rem 2rem; text-align: center; background: var(--bg2); border-top: 1px solid var(--rule); }
+    footer .brand { font-family: var(--font-display); font-size: 0.95rem; color: var(--ink); margin-bottom: 0.2rem; }
+    footer p { font-size: 0.78rem; color: var(--muted); }
+
+    /* === 浮动按钮 === */
+    .float-contact { position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%); background: var(--accent); color: #fff; padding: 0.65rem 1.8rem; border-radius: 30px; font-size: 0.85rem; font-weight: 600; text-decoration: none; box-shadow: 0 4px 16px rgba(58,90,64,0.4); z-index: 100; display: none; }
+
+    /* === 图片画廊 === */
+    .gallery-section { background: var(--bg); }
+    .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1.5rem 0; }
+    .gallery-item { margin: 0; }
+    .gallery-item img { width: 100%; max-width: 100%; border-radius: 12px; display: block; box-shadow: 0 2px 12px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s; }
+    .gallery-item img:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+    .gallery-item figcaption { font-size: 0.82rem; color: var(--muted); margin-top: 0.5rem; text-align: center; line-height: 1.5; }
+    .gallery-item.full { grid-column: 1 / -1; }
+
+    /* === Responsive === */
+    @media (max-width: 768px) {
+      .hero { min-height: 560px; }
+      .hero-content h1 { font-size: 2rem; }
+      section { padding: 2.5rem 1.2rem; }
+      section h2 { font-size: 1.4rem; }
+      .hero-buttons { flex-direction: column; }
+      .hero-buttons .btn { text-align: center; }
+      .value-grid { grid-template-columns: 1fr; }
+      .outcomes-grid { grid-template-columns: 1fr; }
+      .info-grid { grid-template-columns: 1fr; }
+      .includes-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .float-contact { display: block; }
+      .qr-img { width: 180px; height: 180px; }
+      .top-nav { flex-direction: column; align-items: flex-start; }
+    }
+  
+    /* === Logo styles === */
+    .nav-brand-logo { height: 38px; width: auto; display: block; }
+    .footer-logo-wrap { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
+    .footer-logo-circular { height: 56px; width: auto; display: block; }
+    .footer-logo-horizontal { height: 40px; width: auto; display: block; }
+    @media (max-width: 768px) {
+      .nav-brand-logo { height: 30px; }
+      .footer-logo-circular { height: 48px; }
+      .footer-logo-horizontal { height: 34px; }
+    }
+
+</style>
+</head>
+<body>
+
+  <!-- 顶部导航 -->
+  <div class="top-nav">
+    <div class="nav-brand"><img src="assets/logo-horizontal.png" alt="天泽户外" class="nav-brand-logo" style="height:38px;"></div>
+    <div class="nav-links">
+      <a href="tianze-outdoor.html">关于天泽</a>
+      <a href="desert-challenge-2026.html">沙漠挑战营</a>
+      <a href="more-activities.html">更多活动</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-preview-badge">2026 国庆预告</span>
+      <h1>腾格里沙漠亲子挑战赛</h1>
+      <p class="subtitle">挑战身心极限，升华家庭内核</p>
+      <p class="tagline">把孩子从灯光下带到阳光下，从课本里带到现实里</p>
+      <div class="hero-brand-line">
+        <span class="since">EST. 1999</span>
+        <span class="divider"></span>
+        <span class="loc">天泽户外 · 鹿爸亲自同行</span>
+      </div>
+      <div class="hero-buttons">
+        <a href="#intro" class="btn btn-primary">了解挑战赛</a>
+        <a href="#signup" class="btn btn-outline">报名方式</a>
+      </div>
+    </div>
+  </div>
+
+  <article class="page">
+
+    <!-- 活动介绍 -->
+    <section class="intro-section" id="intro">
+      <div class="section-tag">ABOUT THE CHALLENGE</div>
+      <h2>为什么是腾格里沙漠</h2>
+      <p class="section-desc">沙漠是最诚实的老师。没有手机信号，没有现成答案，只有脚下的沙、头顶的星、身边的孩子。</p>
+      <div class="intro-quote">
+        "在沙漠里，孩子第一次发现：<em>自己的身体比想象中强大，自己的意志比困难更坚定</em>。"
+      </div>
+      <div class="intro-text">
+        <p>腾格里沙漠，中国第四大沙漠。沙丘起伏，星空浩瀚，是天然的意志力训练场。我们不是去旅游，是去<em>行走、去坚持、去突破</em>。</p>
+        <p>5-6天的沙漠徒步，42公里的毅行，每一天都在考验身体，也在重塑家庭关系。没有屏幕的干扰，没有城市的喧嚣，只有脚下的路和身边一起走的人。</p>
+        <p>鹿爸亲自同行，27年户外经验，不只是带队，更是<em>在真实的环境中，认真看见每一个孩子</em>。</p>
+      </div>
+    </section>
+
+    <!-- 意义与价值 -->
+    <section class="value-section">
+      <div class="section-tag">WHY IT MATTERS</div>
+      <h2>挑战身心极限，升华家庭内核</h2>
+      <p class="section-desc">沙漠徒步不是休闲旅行，是一场身体的洗礼，更是一次家庭关系的深度重建。</p>
+      <div class="value-grid">
+        <div class="value-card">
+          <div class="vc-icon">体魄</div>
+          <h3>身体在行走中变强</h3>
+          <p>42公里沙漠徒步，是对体能的真实考验。沙地行走比平路更费力，每一步都需要核心力量和耐力支撑。走完全程的孩子，会真正相信自己的身体。</p>
+          <div class="vc-quote">"走完沙漠才知道，原来我能做到自己以为做不到的事。"</div>
+        </div>
+        <div class="value-card">
+          <div class="vc-icon">意志</div>
+          <h3>意志在坚持中长出来</h3>
+          <p>沙漠里没有退路，只有向前。当孩子想放弃却咬牙坚持下来的时候，那份"我做到了"的信念，会刻进骨子里，成为他面对未来困难时的底气。</p>
+          <div class="vc-quote">"沙漠教会我：再坚持一步，就到终点了。"</div>
+        </div>
+        <div class="value-card">
+          <div class="vc-icon">家庭</div>
+          <h3>关系在并肩中升华</h3>
+          <p>父母和孩子一起徒步，一起面对困难，一起在沙丘上看日落。没有手机的干扰，没有工作邮件，只有真正的陪伴。这种共同经历，比任何说教都有效。</p>
+          <div class="vc-quote">"和孩子一起走完沙漠，是一辈子最珍贵的记忆。"</div>
+        </div>
+        <div class="value-card">
+          <div class="vc-icon">真实</div>
+          <h3>把成长还给真实</h3>
+          <p>没有WiFi，没有空调，没有外卖。只有星空、沙丘、和真实的自己。在沙漠的极端环境里，孩子学到的不是知识，而是面对真实的勇气和能力。</p>
+          <div class="vc-quote">"看见 · 自然养育 · 生长其体魄，强健其精神"</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 日程安排 -->
+    <section class="schedule-section">
+      <div class="section-tag">SCHEDULE</div>
+      <h2>日程安排 · 5-6天沙漠徒步</h2>
+      <p class="section-desc">以最终确认版为准，以下为预告参考行程。</p>
+      <div class="key-note"><strong>预告说明：</strong>本页面为2026国庆腾格里沙漠亲子挑战赛预告，正式行程、费用、报名信息将在确认后于 <a href="desert-challenge-2026.html" style="color:var(--accent2);">正式页面</a> 公布。</div>
+      <div class="schedule-timeline">
+        <div class="schedule-item">
+          <div class="schedule-dot"></div>
+          <div class="schedule-day">DAY 1</div>
+          <div class="schedule-title">银川集合 · 出征仪式</div>
+          <div class="schedule-desc">银川集合，装备检查与行前说明会。<strong>出征仪式</strong>，让每个孩子明确目标、准备出发。</div>
+          <span class="schedule-accommodation">住：银川酒店</span>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-dot"></div>
+          <div class="schedule-day">DAY 2</div>
+          <div class="schedule-title">入沙 · 第一天徒步</div>
+          <div class="schedule-desc">进入腾格里沙漠，适应沙地行走节奏。<strong>约8-10公里</strong>，学习沙漠行走技巧、扎营、取水。</div>
+          <span class="schedule-accommodation">住：沙漠帐篷露营</span>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-dot"></div>
+          <div class="schedule-day">DAY 3-4</div>
+          <div class="schedule-title">深入腹地 · 挑战日</div>
+          <div class="schedule-desc">连续两天深度徒步，<strong>每天约10-12公里</strong>。翻越高大沙丘，穿越盐湖，在星空下露营。这几天是体能与意志的真正考验。</div>
+          <span class="schedule-accommodation">住：沙漠帐篷露营</span>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-dot"></div>
+          <div class="schedule-day">DAY 5</div>
+          <div class="schedule-title">冲顶 · 最后的坚持</div>
+          <div class="schedule-desc">最后一天徒步冲刺，<strong>约8公里</strong>抵达终点。完成42公里毅行，<strong>冲线仪式</strong>，为每个孩子颁发完赛纪念。</div>
+          <span class="schedule-accommodation">住：银川酒店</span>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-dot"></div>
+          <div class="schedule-day">DAY 6</div>
+          <div class="schedule-title">返程 · 带着改变回家</div>
+          <div class="schedule-desc">总结分享会，<strong>每个孩子讲述自己的故事</strong>。带着新的力量、新的自信、和新的家庭记忆返程。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 图片画廊 -->
+    <section class="gallery-section">
+      <div class="section-tag">GALLERY</div>
+      <h2>沙漠的壮阔与真实</h2>
+      <p class="section-desc">这些是真实的沙漠瞬间——不是旅游宣传，是一步一步走出来的。</p>
+      <!-- 图片使用微信图床链接，如需替换请更新 src -->
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <img src="https://mmbiz.qpic.cn/mmbiz_jpg/desert-dunes-01/640?wx_fmt=jpeg" alt="腾格里沙漠连绵沙丘" loading="lazy">
+          <figcaption>连绵的沙丘，是每一步的考验</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="https://mmbiz.qpic.cn/mmbiz_jpg/desert-starry-night/640?wx_fmt=jpeg" alt="沙漠星空下的露营" loading="lazy">
+          <figcaption>沙漠星空下的露营，城市里看不到的银河</figcaption>
+        </figure>
+        <figure class="gallery-item full">
+          <img src="https://mmbiz.qpic.cn/mmbiz_jpg/desert-family-hiking/640?wx_fmt=jpeg" alt="亲子沙漠徒步并肩行走" loading="lazy">
+          <figcaption>父母和孩子并肩行走，这是最真实的陪伴</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="https://mmbiz.qpic.cn/mmbiz_jpg/desert-finish-line/640?wx_fmt=jpeg" alt="孩子冲过终点线" loading="lazy">
+          <figcaption>冲线的那一刻，"我做到了"</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="https://mmbiz.qpic.cn/mmbiz_jpg/desert-sunset/640?wx_fmt=jpeg" alt="沙丘上的日落" loading="lazy">
+          <figcaption>沙丘上的日落，走了一天的人才能看到</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 报名方式 -->
+    <section class="signup-section" id="signup">
+      <div class="section-tag">SIGN UP</div>
+      <h2>报名方式</h2>
+      <p class="section-desc">2026国庆腾格里沙漠亲子挑战赛，小规模出行，鹿爸亲自同行。</p>
+      <div class="key-note"><strong>预告阶段：</strong>正式报名尚未开放。如感兴趣，请扫码加鹿爸微信，备注"腾格里沙漠亲子挑战赛"，第一时间获取正式信息。</div>
+      <div class="contact-card">
+        <h2>扫码加鹿爸微信</h2>
+        <p class="contact-desc">添加时请备注"腾格里沙漠亲子挑战赛"，方便快速通过。</p>
+        <div class="qr-area">
+          <div class="qr-img"><img src="assets/luba_wechat_qr.png" alt="鹿爸微信二维码"></div>
+        </div>
+        <div class="qr-remark">备注：腾格里沙漠亲子挑战赛</div>
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <span class="ci-label">主理人</span>
+            <span class="ci-text">鹿爸 · 章松（天泽户外创始人）</span>
+          </div>
+          <div class="contact-info-item">
+            <span class="ci-label">品牌</span>
+            <span class="ci-text">天泽户外 · 创办于1999年</span>
+          </div>
+          <div class="contact-info-item">
+            <span class="ci-label">预计时间</span>
+            <span class="ci-text">2026年10月 · 国庆假期</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </article>
+
+  <!-- 更多活动链接 -->
+  <section class="back-link-section">
+    <h2>更多天泽户外活动</h2>
+    <p>27年，把成长还给真实。探索更多亲子户外体验。</p>
+    <a href="more-activities.html" class="back-btn">查看全部活动</a>
+    <a href="desert-challenge-2026.html" class="back-btn outline">沙漠挑战营正式页</a>
+    <a href="tianze-outdoor.html" class="back-btn outline">关于天泽户外</a>
+  </section>
+
+  <footer>
+    <div class="footer-logo-wrap"><img src="assets/logo-circular.png" alt="天泽户外 徽标" class="footer-logo-circular" style="height:56px;"><img src="assets/logo-horizontal.png" alt="天泽户外" class="footer-logo-horizontal" style="height:40px;"></div>
+    <div style="font-family:var(--font-display); font-size:1.2rem; font-weight:700; color:var(--accent); letter-spacing:0.05em; margin-bottom:0.3rem;">天泽户外</div>
+    <p style="font-size:0.78rem; color:var(--muted);">创办于 1999 年 · 杭州天泽户外运动咨询有限公司</p>
+    <div class="brand" style="margin-top:0.6rem;">天泽户外 · 腾格里沙漠亲子挑战赛预告</div>
+    <p>杭州天泽户外运动咨询有限公司 · 创办于1999年 · 鹿爸·章松</p>
+    <p style="margin-top:0.3rem;">看见 · 自然养育 · 生长其体魄，强健其精神</p>
+  </footer>
+
+  <a href="#signup" class="float-contact">立即报名</a>
+
+</body>
+</html>
