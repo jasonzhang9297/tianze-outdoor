@@ -26,7 +26,8 @@
       /* 呼伦贝尔草原 */
       --grass: #27ae60; --grass-light: #58d68d; --grass-pale: #d5f5e3; --sky: #85c1e2; --earth: #8b6f47;
       /* 通用 */
-      --warm: #e8c07d; --accent: #4a7c4e; --accent2: #d4843a;
+      --warm: #e8c07d; --accent: #4a7c4e; --accent2: #d4843a;      --accent3: #3d7a9a;
+      --soil: #8b6f47;
       --font: 'Outfit', 'PingFang SC', 'Microsoft YaHei', sans-serif;
       --font-display: 'NationalPark', 'PingFang SC', serif;
       --font-mono: 'DMMono', monospace;
@@ -249,30 +250,15 @@
       .camp-section div[style*="display:flex"] img[style*="width:280px"] { width: 100% !important; }
     }
 
-    /* === 品牌Logo系统 === */
-    .nav-brand-wrap { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
-    .nav-brand-logo { height: 50px; width: auto; display: block; transition: opacity 0.2s; }
-    .nav-brand-wrap:hover .nav-brand-logo { opacity: 0.85; }
-    .nav-brand-text { display: flex; flex-direction: column; line-height: 1.2; }
-    .nav-brand-text .brand-name { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--ink); }
-    .nav-brand-text .brand-since { font-family: var(--font-mono); font-size: 0.65rem; color: var(--muted); letter-spacing: 0.05em; }
-
-    .footer-brand-section { display: flex; flex-direction: column; align-items: center; gap: 1.2rem; padding: 1rem 0 0.5rem; }
-    .footer-logo-combo { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
-    .footer-logo-circular { height: 90px; width: auto; display: block; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.1)); }
-    .footer-logo-divider { width: 1px; height: 60px; background: var(--rule); }
-    .footer-logo-horizontal { height: 54px; width: auto; display: block; }
-    .footer-brand-text { text-align: center; }
-    .footer-brand-text .fb-name { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--ink); margin-bottom: 0.2rem; }
-    .footer-brand-text .fb-tagline { font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+    /* === Logo styles === */
+    .nav-brand-logo { height: 38px; width: auto; display: block; }
+    .footer-logo-wrap { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
+    .footer-logo-circular { height: 56px; width: auto; display: block; }
+    .footer-logo-horizontal { height: 40px; width: auto; display: block; }
     @media (max-width: 768px) {
-      .nav-brand-logo { height: 38px; }
-      .nav-brand-text .brand-name { font-size: 0.88rem; }
-      .nav-brand-text .brand-since { font-size: 0.6rem; }
-      .footer-logo-circular { height: 72px; }
-      .footer-logo-horizontal { height: 42px; }
-      .footer-logo-divider { height: 48px; }
-      .footer-logo-combo { gap: 1rem; }
+      .nav-brand-logo { height: 30px; }
+      .footer-logo-circular { height: 48px; }
+      .footer-logo-horizontal { height: 34px; }
     }
 
 </style>
@@ -282,7 +268,7 @@
 
     <!-- ========== 顶部导航 ========== -->
     <nav style="background:#fff; padding:0.8rem 2rem; border-bottom:1px solid var(--rule); position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;">
-      <a href="tianze-outdoor.html" class="nav-brand-wrap"><img src="assets/logo-horizontal.png" alt="天泽户外" class="nav-brand-logo"><span class="nav-brand-text"><span class="brand-name">天泽户外</span><span class="brand-since">EST. 1999</span></span></a>
+      <img src="assets/logo-horizontal.png" alt="天泽户外" class="nav-brand-logo" style="height:38px;">
       <a href="#contact" style="font-size:0.85rem; color:var(--accent); text-decoration:none; font-weight:600;">扫码加微信，先聊聊 →</a>
     </nav>
 
@@ -323,6 +309,59 @@
 
       <div class="key-note">
         <strong>成人与儿童配比不超过 1:6。</strong> 主理人负责持续陪伴，涉及水域、攀岩、骑马等专项活动时，将根据最终人数和风险评估另行配置专业人员与安全方案。
+      </div>
+    </section>
+
+
+    <!-- ========== 家长共鸣区 ========== -->
+    <section class="resonance">
+      <div class="section-tag">也许你也有同感</div>
+      <h2>孩子缺少的，<br>也许不是更多课程，而是真实生活的练习</h2>
+
+      <div class="resonance-grid">
+        <div class="resonance-item">
+          <p>知道很多道理，却<strong>很少有机会自己做决定</strong></p>
+        </div>
+        <div class="resonance-item">
+          <p>被照顾得很好，却<strong>缺少照顾自己和承担责任的练习</strong></p>
+        </div>
+        <div class="resonance-item">
+          <p>活动参加了不少，却<strong>没有时间把经历变成能力</strong></p>
+        </div>
+      </div>
+
+      <div class="resonance-conclusion">
+        所以我们不只安排活动，我们设计一条成长发生的路径。
+      </div>
+    </section>
+
+    <!-- ========== 教育理念 ========== -->
+    <section class="philosophy">
+      <div class="section-tag">教育理念</div>
+      <h2>一所没有围墙的学校</h2>
+      <p class="section-desc">大自然不是活动背景，而是教室和老师。真实问题不是插曲，而是教材。行动不是课堂结束后的练习，而是学习本身。</p>
+
+      <div class="philosophy-grid">
+        <div class="phil-card">
+          <div class="icon">🌲</div>
+          <h3>自然是教室</h3>
+          <p>森林、水域、山地、天气变化，都是真实的学习场景</p>
+        </div>
+        <div class="phil-card">
+          <div class="icon">📋</div>
+          <h3>真实任务是教材</h3>
+          <p>做饭、搭帐篷、认路、处理问题，每一件事都有教育意义</p>
+        </div>
+        <div class="phil-card">
+          <div class="icon">🧭</div>
+          <h3>主理人是陪伴者</h3>
+          <p>搭建安全边界、提出问题、陪伴复盘，而不是包办答案</p>
+        </div>
+        <div class="phil-card">
+          <div class="icon">💭</div>
+          <h3>反思让经历成为成长</h3>
+          <p>体验→感受→思考→表达→再行动→带回生活</p>
+        </div>
       </div>
     </section>
 
@@ -690,6 +729,1093 @@
       </div>
     </section>
 
+
+    <!-- ========== 24天成长地图 ========== -->
+    <section class="growth-map" id="growth-map">
+      <div class="section-tag">核心内容</div>
+      <h2>24 天成长地图</h2>
+      <p class="section-desc">六个章节，从适应与安全逐步走向挑战、责任、自我认识和迁移。每一章 4 天，每一天都有真实场景、真实任务和成长证据。</p>
+
+      <div class="chapters-nav" id="chapters-nav">
+        <button class="chapter-tab active" data-chapter="1">第一章 · 我来到这里</button>
+        <button class="chapter-tab" data-chapter="2">第二章 · 学会相处</button>
+        <button class="chapter-tab" data-chapter="3">第三章 · 学会面对</button>
+        <button class="chapter-tab" data-chapter="4">第四章 · 真实生活</button>
+        <button class="chapter-tab" data-chapter="5">第五章 · 更大的世界</button>
+        <button class="chapter-tab" data-chapter="6">第六章 · 看见变化</button>
+      </div>
+
+      <!-- 第一章 -->
+      <div class="chapter-section active" id="chapter-1">
+        <div class="chapter-intro">
+          <div class="chapter-range">第 1–4 天</div>
+          <h3>第一章 · 我来到这里</h3>
+          <p>适应、感知、自我照顾、建立归属。一切从"我能在这里感到安全"开始。</p>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <div class="day-num">Day 1</div>
+            <div class="day-title">
+              <h4>从陌生到"这是我们的营地"</h4>
+              <div class="day-task">跟随主理人认识营地，完成一张属于自己的营地地图</div>
+            </div>
+            <span class="day-expand">+</span>
+          </div>
+          <div class="day-body">
+            <div class="day-body-inner">
+              <div class="day-meta">
+                <div class="day-meta-item">
+                  <div class="label">真实场景</div>
+                  <div class="value">报到、营地探索、生活空间整理</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">教育目的</div>
+                  <div class="value">安全感、归属感、主动求助</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">儿童选择</div>
+                  <div class="value">选择个人空间布置方式和第一件愿意自己负责的小事</div>
+                </div>
+              </div>
+              <div class="day-reflection">
+                <div class="label">复盘问题</div>
+                <p>今天哪个时刻让我开始觉得"我属于这里"？</p>
+              </div>
+              <div class="day-evidence">
+                <span class="evidence-tag">手绘营地地图</span>
+                <span class="evidence-tag">个人求助卡</span>
+                <span class="evidence-tag">第一天心情记录</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <div class="day-num">Day 2</div>
+            <div class="day-title">
+              <h4>重新打开感官</h4>
+              <div class="day-task">完成声音、颜色、气味、触感的自然观察任务</div>
+            </div>
+            <span class="day-expand">+</span>
+          </div>
+          <div class="day-body">
+            <div class="day-body-inner">
+              <div class="day-meta">
+                <div class="day-meta-item">
+                  <div class="label">真实场景</div>
+                  <div class="value">林地、草地或营地周边自然路径</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">教育目的</div>
+                  <div class="value">专注力、好奇心、感知力</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">儿童选择</div>
+                  <div class="value">选择自己最想深入观察的自然对象</div>
+                </div>
+              </div>
+              <div class="day-reflection">
+                <div class="label">复盘问题</div>
+                <p>当我慢下来以后，发现了什么以前看不见的东西？</p>
+              </div>
+              <div class="day-evidence">
+                <span class="evidence-tag">自然感官地图</span>
+                <span class="evidence-tag">一平方米观察记录</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <div class="day-num">Day 3</div>
+            <div class="day-title">
+              <h4>先学会照顾自己</h4>
+              <div class="day-task">根据天气、活动和身体状态准备装备、水、衣物与防护</div>
+            </div>
+            <span class="day-expand">+</span>
+          </div>
+          <div class="day-body">
+            <div class="day-body-inner">
+              <div class="day-meta">
+                <div class="day-meta-item">
+                  <div class="label">真实场景</div>
+                  <div class="value">真实天气与一日户外生活</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">教育目的</div>
+                  <div class="value">自我管理、身体觉察、准备意识</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">儿童选择</div>
+                  <div class="value">在清单范围内自己决定如何收纳和携带</div>
+                </div>
+              </div>
+              <div class="day-reflection">
+                <div class="label">复盘问题</div>
+                <p>今天哪一次提前准备，让我少了一次麻烦？</p>
+              </div>
+              <div class="day-evidence">
+                <span class="evidence-tag">个人装备系统</span>
+                <span class="evidence-tag">身体状态自检卡</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <div class="day-num">Day 4</div>
+            <div class="day-title">
+              <h4>我的生活空间，也由我参与建设</h4>
+              <div class="day-task">整理个人区域，共同决定公共空间规则</div>
+            </div>
+            <span class="day-expand">+</span>
+          </div>
+          <div class="day-body">
+            <div class="day-body-inner">
+              <div class="day-meta">
+                <div class="day-meta-item">
+                  <div class="label">真实场景</div>
+                  <div class="value">营地公共空间</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">教育目的</div>
+                  <div class="value">生活自主、规则理解、空间责任</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">儿童选择</div>
+                  <div class="value">决定自己的整理方法，提出规则、表达不同意见</div>
+                </div>
+              </div>
+              <div class="day-reflection">
+                <div class="label">复盘问题</div>
+                <p>一条大家都愿意遵守的规则是怎样产生的？</p>
+              </div>
+              <div class="day-evidence">
+                <span class="evidence-tag">个人空间记录</span>
+                <span class="evidence-tag">生活约定</span>
+                <span class="evidence-tag">个人责任卡</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 第二章 -->
+      <div class="chapter-section" id="chapter-2">
+        <div class="chapter-intro">
+          <div class="chapter-range">第 5–8 天</div>
+          <h3>第二章 · 我学会与身边的人相处</h3>
+          <p>倾听、边界、表达、独立完成。关系中的学习，在少人数真实相处中慢慢发生。</p>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <div class="day-num">Day 5</div>
+            <div class="day-title">
+              <h4>先听懂，再行动</h4>
+              <div class="day-task">通过地图描述、物件搭建或路径沟通，练习把一件事说清楚、听明白</div>
+            </div>
+            <span class="day-expand">+</span>
+          </div>
+          <div class="day-body">
+            <div class="day-body-inner">
+              <div class="day-meta">
+                <div class="day-meta-item">
+                  <div class="label">真实场景</div>
+                  <div class="value">与主理人或同行孩子准确交换信息的生活任务</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">教育目的</div>
+                  <div class="value">倾听、清晰表达、信息确认</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">儿童选择</div>
+                  <div class="value">选择用语言、绘图、示范或提问来表达</div>
+                </div>
+              </div>
+              <div class="day-reflection">
+                <div class="label">复盘问题</div>
+                <p>我以为自己说清楚了，对方真的听懂了吗？</p>
+              </div>
+              <div class="day-evidence">
+                <span class="evidence-tag">个人沟通三原则</span>
+                <span class="evidence-tag">主理人观察记录</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <div class="day-num">Day 6</div>
+            <div class="day-title">
+              <h4>信任从清楚的边界开始</h4>
+              <div class="day-task">练习听懂口令、完成检查、表达"可以""等等"和"停止"</div>
+            </div>
+            <span class="day-expand">+</span>
+          </div>
+          <div class="day-body">
+            <div class="day-body-inner">
+              <div class="day-meta">
+                <div class="day-meta-item">
+                  <div class="label">真实场景</div>
+                  <div class="value">低风险的平衡、行进或基础绳索体验 <span style="color:var(--accent2); font-size:0.75rem;">[以实际方案为准]</span></div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">教育目的</div>
+                  <div class="value">边界感、信任、标准动作和清楚表达</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">儿童选择</div>
+                  <div class="value">按个人状态选择挑战层级</div>
+                </div>
+              </div>
+              <div class="day-reflection">
+                <div class="label">复盘问题</div>
+                <p>什么时候我愿意继续，什么时候我需要说"停一下"？</p>
+              </div>
+              <div class="day-evidence">
+                <span class="evidence-tag">个人安全口令卡</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <div class="day-num">Day 7</div>
+            <div class="day-title">
+              <h4>冲突也是一堂课</h4>
+              <div class="day-task">在真实分歧中练习表达与协商；没有分歧则做生活选择情境演练</div>
+            </div>
+            <span class="day-expand">+</span>
+          </div>
+          <div class="day-body">
+            <div class="day-body-inner">
+              <div class="day-meta">
+                <div class="day-meta-item">
+                  <div class="label">真实场景</div>
+                  <div class="value">少人数共同生活中自然出现的等待、分享、选择不同</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">教育目的</div>
+                  <div class="value">表达需要、协商、修复关系</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">儿童选择</div>
+                  <div class="value">提出方案、请求暂停、发起重新协商</div>
+                </div>
+              </div>
+              <div class="day-reflection">
+                <div class="label">复盘问题</div>
+                <p>意见不同时，我们怎样对事不对人？</p>
+              </div>
+              <div class="day-evidence">
+                <span class="evidence-tag">冲突修复四句话</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <div class="day-num">Day 8</div>
+            <div class="day-title">
+              <h4>独立完成一个小任务</h4>
+              <div class="day-task">自己规划任务顺序、准备物品并完成路线，主理人在安全范围内陪伴观察</div>
+            </div>
+            <span class="day-expand">+</span>
+          </div>
+          <div class="day-body">
+            <div class="day-body-inner">
+              <div class="day-meta">
+                <div class="day-meta-item">
+                  <div class="label">真实场景</div>
+                  <div class="value">营地定向或多站点任务</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">教育目的</div>
+                  <div class="value">计划、独立行动、承担结果</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">儿童选择</div>
+                  <div class="value">自己选择路线、任务顺序或求助时机</div>
+                </div>
+              </div>
+              <div class="day-reflection">
+                <div class="label">复盘问题</div>
+                <p>我做对了什么？下一次会怎样调整？</p>
+              </div>
+              <div class="day-evidence">
+                <span class="evidence-tag">个人路线图</span>
+                <span class="evidence-tag">任务记录</span>
+                <span class="evidence-tag">首次正式自我复盘</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 第三章 -->
+      <div class="chapter-section" id="chapter-3">
+        <div class="chapter-intro">
+          <div class="chapter-range">第 9–12 天</div>
+          <h3>第三章 · 我学会面对</h3>
+          <p>风险判断、自主挑战、责任、情绪调节。真正的勇敢，不是不怕，而是看清之后仍能做出自己的选择。</p>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <div class="day-num">Day 9</div>
+            <div class="day-title">
+              <h4>真正的安全，从看见风险开始</h4>
+              <div class="day-task">寻找危险源，判断发生概率与可能后果，提出控制方法</div>
+            </div>
+            <span class="day-expand">+</span>
+          </div>
+          <div class="day-body">
+            <div class="day-body-inner">
+              <div class="day-meta">
+                <div class="day-meta-item">
+                  <div class="label">真实场景</div>
+                  <div class="value">营地、步道、器材区的风险观察</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">教育目的</div>
+                  <div class="value">风险识别、判断、求助意识</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">儿童选择</div>
+                  <div class="value">选择重点调查区域</div>
+                </div>
+              </div>
+              <div class="day-reflection">
+                <div class="label">复盘问题</div>
+                <p>勇敢和鲁莽的区别是什么？</p>
+              </div>
+              <div class="day-evidence">
+                <span class="evidence-tag">儿童版风险地图</span>
+                <span class="evidence-tag">"停—看—判—行"卡</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <div class="day-num">Day 10</div>
+            <div class="day-title">
+              <h4>按自己的节奏，向前一步</h4>
+              <div class="day-task">为自己设定一个"比昨天多一步"的挑战并完成保护流程</div>
+            </div>
+            <span class="day-expand">+</span>
+          </div>
+          <div class="day-body">
+            <div class="day-body-inner">
+              <div class="day-meta">
+                <div class="day-meta-item">
+                  <div class="label">真实场景</div>
+                  <div class="value">攀岩、抱石或同目标分级挑战 <span style="color:var(--accent2); font-size:0.75rem;">[以实际项目为准]</span></div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">教育目的</div>
+                  <div class="value">自主挑战、勇气、边界感</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">儿童选择</div>
+                  <div class="value">选择挑战等级，也可以在任何时候合理停止</div>
+                </div>
+              </div>
+              <div class="day-reflection">
+                <div class="label">复盘问题</div>
+                <p>我不是为了证明给别人看，那我为什么愿意再试一次？</p>
+              </div>
+              <div class="day-evidence">
+                <span class="evidence-tag">个人勇气阶梯</span>
+                <span class="evidence-tag">挑战前后感受记录</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <div class="day-num">Day 11</div>
+            <div class="day-title">
+              <h4>会照顾别人，才是更大的能力</h4>
+              <div class="day-task">判断现场、呼叫支援、完成符合年龄的基础处置练习</div>
+            </div>
+            <span class="day-expand">+</span>
+          </div>
+          <div class="day-body">
+            <div class="day-body-inner">
+              <div class="day-meta">
+                <div class="day-meta-item">
+                  <div class="label">真实场景</div>
+                  <div class="value">基础急救与求助模拟</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">教育目的</div>
+                  <div class="value">冷静、责任、信息表达</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">儿童选择</div>
+                  <div class="value">选择符合年龄的情境逐步练习</div>
+                </div>
+              </div>
+              <div class="day-reflection">
+                <div class="label">复盘问题</div>
+                <p>紧张的时候，什么步骤帮助我恢复判断？</p>
+              </div>
+              <div class="day-evidence">
+                <span class="evidence-tag">求助信息模板</span>
+                <span class="evidence-tag">情境演练观察表</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <div class="day-num">Day 12</div>
+            <div class="day-title">
+              <h4>黑夜教我们认识害怕</h4>
+              <div class="day-task">识别夜间声音、方向和情绪变化，练习结伴与灯光纪律</div>
+            </div>
+            <span class="day-expand">+</span>
+          </div>
+          <div class="day-body">
+            <div class="day-body-inner">
+              <div class="day-meta">
+                <div class="day-meta-item">
+                  <div class="label">真实场景</div>
+                  <div class="value">严格带队的黄昏或夜间自然观察</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">教育目的</div>
+                  <div class="value">情绪识别、感官适应、谨慎行动</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">儿童选择</div>
+                  <div class="value">选择观察距离和参与深度，不进行强迫式"练胆"</div>
+                </div>
+              </div>
+              <div class="day-reflection">
+                <div class="label">复盘问题</div>
+                <p>害怕出现时，我的身体告诉了我什么？</p>
+              </div>
+              <div class="day-evidence">
+                <span class="evidence-tag">夜间自然笔记</span>
+                <span class="evidence-tag">个人稳定情绪方法</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 第四章 -->
+      <div class="chapter-section" id="chapter-4">
+        <div class="chapter-intro">
+          <div class="chapter-range">第 13–16 天</div>
+          <h3>第四章 · 我在真实生活中学习</h3>
+          <p>水域、搭建、生活技能、共同劳动。把生活本身变成课堂，在做事情中学会做事情。</p>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <div class="day-num">Day 13</div>
+            <div class="day-title">
+              <h4>尊重水，才能靠近水</h4>
+              <div class="day-task">认识边界、正确使用浮力装备，完成自检、成人复检和求助练习</div>
+            </div>
+            <span class="day-expand">+</span>
+          </div>
+          <div class="day-body">
+            <div class="day-body-inner">
+              <div class="day-meta">
+                <div class="day-meta-item">
+                  <div class="label">真实场景</div>
+                  <div class="value">水域规则和装备训练 <span style="color:var(--accent2); font-size:0.75rem;">[如实际包含水域活动]</span></div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">教育目的</div>
+                  <div class="value">水域敬畏、规则意识、自我保护和求助</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">儿童选择</div>
+                  <div class="value">在能力评估和安全规则内选择参与等级</div>
+                </div>
+              </div>
+              <div class="day-reflection">
+                <div class="label">复盘问题</div>
+                <p>水域能力不只是"会不会游泳"，还包括什么？</p>
+              </div>
+              <div class="day-evidence">
+                <span class="evidence-tag">个人水域检查卡</span>
+                <span class="evidence-tag">水域行为约定</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <div class="day-num">Day 14</div>
+            <div class="day-title">
+              <h4>和环境合作，而不是硬碰硬</h4>
+              <div class="day-task">观察水流、天气、身体状态和同行者距离，学习调整节奏</div>
+            </div>
+            <span class="day-expand">+</span>
+          </div>
+          <div class="day-body">
+            <div class="day-body-inner">
+              <div class="day-meta">
+                <div class="day-meta-item">
+                  <div class="label">真实场景</div>
+                  <div class="value">划行、近岸观察或同教育目标水域体验</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">教育目的</div>
+                  <div class="value">适应变化、身体觉察、保持判断</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">儿童选择</div>
+                  <div class="value">在安全范围内选择速度、练习深度和休息时机</div>
+                </div>
+              </div>
+              <div class="day-reflection">
+                <div class="label">复盘问题</div>
+                <p>什么时候"更用力"并不是最好的办法？</p>
+              </div>
+              <div class="day-evidence">
+                <span class="evidence-tag">个人水域观察日志</span>
+                <span class="evidence-tag">节奏复盘图</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <div class="day-num">Day 15</div>
+            <div class="day-title">
+              <h4>用有限资源创造一个家</h4>
+              <div class="day-task">评估地点、材料和天气，合作完成安全的临时空间</div>
+            </div>
+            <span class="day-expand">+</span>
+          </div>
+          <div class="day-body">
+            <div class="day-body-inner">
+              <div class="day-meta">
+                <div class="day-meta-item">
+                  <div class="label">真实场景</div>
+                  <div class="value">营地搭建、遮蔽空间或模型建造</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">教育目的</div>
+                  <div class="value">资源意识、工程思维、动手能力</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">儿童选择</div>
+                  <div class="value">在材料与边界内自主设计</div>
+                </div>
+              </div>
+              <div class="day-reflection">
+                <div class="label">复盘问题</div>
+                <p>一个"能用"的设计和一个"看起来好"的设计有什么不同？</p>
+              </div>
+              <div class="day-evidence">
+                <span class="evidence-tag">设计草图</span>
+                <span class="evidence-tag">成品测试记录</span>
+                <span class="evidence-tag">迭代说明</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <div class="day-num">Day 16</div>
+            <div class="day-title">
+              <h4>一顿饭里的责任</h4>
+              <div class="day-task">每个孩子认领一件从准备到收尾都能负责的真实工作</div>
+            </div>
+            <span class="day-expand">+</span>
+          </div>
+          <div class="day-body">
+            <div class="day-body-inner">
+              <div class="day-meta">
+                <div class="day-meta-item">
+                  <div class="label">真实场景</div>
+                  <div class="value">成人监管下参与完成一顿户外餐食</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">教育目的</div>
+                  <div class="value">劳动、计划、卫生、感恩与资源责任</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">儿童选择</div>
+                  <div class="value">选择自己能胜任又略有挑战的一项工作</div>
+                </div>
+              </div>
+              <div class="day-reflection">
+                <div class="label">复盘问题</div>
+                <p>一顿饭背后，有多少人的工作？</p>
+              </div>
+              <div class="day-evidence">
+                <span class="evidence-tag">餐食记录</span>
+                <span class="evidence-tag">个人责任记录</span>
+                <span class="evidence-tag">食物浪费观察</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 第五章 -->
+      <div class="chapter-section" id="chapter-5">
+        <div class="chapter-intro">
+          <div class="chapter-range">第 17–20 天</div>
+          <h3>第五章 · 我们走向更大的世界</h3>
+          <p>远征、坚持、生态行动、救援意识。从熟悉的营地出发，把能力带到更远的地方。</p>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <div class="day-num">Day 17</div>
+            <div class="day-title">
+              <h4>远征从计划开始</h4>
+              <div class="day-task">读路线、查天气、分配物资、制定时间点和备选方案</div>
+            </div>
+            <span class="day-expand">+</span>
+          </div>
+          <div class="day-body">
+            <div class="day-body-inner">
+              <div class="day-meta">
+                <div class="day-meta-item">
+                  <div class="label">真实场景</div>
+                  <div class="value">远足、探索或综合任务前的完整准备</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">教育目的</div>
+                  <div class="value">计划力、前瞻思维、风险管理</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">儿童选择</div>
+                  <div class="value">参与路线、角色和资源分配决策</div>
+                </div>
+              </div>
+              <div class="day-reflection">
+                <div class="label">复盘问题</div>
+                <p>好计划怎样为变化留下空间？</p>
+              </div>
+              <div class="day-evidence">
+                <span class="evidence-tag">儿童版行动计划</span>
+                <span class="evidence-tag">装备表</span>
+                <span class="evidence-tag">备选方案</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <div class="day-num">Day 18</div>
+            <div class="day-title">
+              <h4>走得远，也要照顾好自己</h4>
+              <div class="day-task">管理自己的体力和节奏，清楚表达身体状态</div>
+            </div>
+            <span class="day-expand">+</span>
+          </div>
+          <div class="day-body">
+            <div class="day-body-inner">
+              <div class="day-meta">
+                <div class="day-meta-item">
+                  <div class="label">真实场景</div>
+                  <div class="value">符合年龄与体能评估的徒步或持续性挑战</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">教育目的</div>
+                  <div class="value">韧性、节奏管理、求助和关心他人</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">儿童选择</div>
+                  <div class="value">提出休息、调整携带物品或表达需要帮助</div>
+                </div>
+              </div>
+              <div class="day-reflection">
+                <div class="label">复盘问题</div>
+                <p>坚持一定是不停下来吗？</p>
+              </div>
+              <div class="day-evidence">
+                <span class="evidence-tag">个人路线故事</span>
+                <span class="evidence-tag">身体能量曲线</span>
+                <span class="evidence-tag">互助记录</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <div class="day-num">Day 19</div>
+            <div class="day-title">
+              <h4>自然不是被使用的背景</h4>
+              <div class="day-task">观察一种本地生命或环境问题，完成小型生态调查与低影响行动</div>
+            </div>
+            <span class="day-expand">+</span>
+          </div>
+          <div class="day-body">
+            <div class="day-body-inner">
+              <div class="day-meta">
+                <div class="day-meta-item">
+                  <div class="label">真实场景</div>
+                  <div class="value">营地或周边真实生态环境</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">教育目的</div>
+                  <div class="value">生态素养、证据意识、行动责任</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">儿童选择</div>
+                  <div class="value">选择关注的对象或行动议题</div>
+                </div>
+              </div>
+              <div class="day-reflection">
+                <div class="label">复盘问题</div>
+                <p>今天我们给自然留下了什么，又没有留下什么？</p>
+              </div>
+              <div class="day-evidence">
+                <span class="evidence-tag">自然调查页</span>
+                <span class="evidence-tag">生态微项目</span>
+                <span class="evidence-tag">低影响行动记录</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <div class="day-num">Day 20</div>
+            <div class="day-title">
+              <h4>救援不是英雄表演，而是一套系统</h4>
+              <div class="day-task">练习先保护自己、观察现场、找到成人、说清位置和情况</div>
+            </div>
+            <span class="day-expand">+</span>
+          </div>
+          <div class="day-body">
+            <div class="day-body-inner">
+              <div class="day-meta">
+                <div class="day-meta-item">
+                  <div class="label">真实场景</div>
+                  <div class="value">严格控制风险的户外突发情境模拟</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">教育目的</div>
+                  <div class="value">安全次序、求助意识、冷静沟通</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">儿童选择</div>
+                  <div class="value">从适合自己年龄和经验的情境开始练习</div>
+                </div>
+              </div>
+              <div class="day-reflection">
+                <div class="label">复盘问题</div>
+                <p>遇到紧急情况时，我首先要做什么，又有哪些事情不能逞强去做？</p>
+              </div>
+              <div class="day-evidence">
+                <span class="evidence-tag">个人求助流程图</span>
+                <span class="evidence-tag">主理人复盘</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 第六章 -->
+      <div class="chapter-section" id="chapter-6">
+        <div class="chapter-intro">
+          <div class="chapter-range">第 21–24 天</div>
+          <h3>第六章 · 我看见自己的变化</h3>
+          <p>小项目、主动负责、表达、把成长带回家。24 天不是结束，而是把能力带回生活的开始。</p>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <div class="day-num">Day 21</div>
+            <div class="day-title">
+              <h4>我能发现一个真实问题</h4>
+              <div class="day-task">从自己的观察出发，选择一个小问题，提出一项可以亲手完成的改进</div>
+            </div>
+            <span class="day-expand">+</span>
+          </div>
+          <div class="day-body">
+            <div class="day-body-inner">
+              <div class="day-meta">
+                <div class="day-meta-item">
+                  <div class="label">真实场景</div>
+                  <div class="value">营地、自然或共同生活中确实存在的小问题</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">教育目的</div>
+                  <div class="value">同理心、问题定义、项目意识</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">儿童选择</div>
+                  <div class="value">自主选择议题、表达方式和需要的帮助</div>
+                </div>
+              </div>
+              <div class="day-reflection">
+                <div class="label">复盘问题</div>
+                <p>我是在解决真正的问题，还是只在做自己喜欢的东西？</p>
+              </div>
+              <div class="day-evidence">
+                <span class="evidence-tag">个人小项目提案</span>
+                <span class="evidence-tag">观察记录</span>
+                <span class="evidence-tag">行动清单</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <div class="day-num">Day 22</div>
+            <div class="day-title">
+              <h4>我把一件事负责到底</h4>
+              <div class="day-task">自己说清目标、准备材料、完成行动、处理变化并收尾</div>
+            </div>
+            <span class="day-expand">+</span>
+          </div>
+          <div class="day-body">
+            <div class="day-body-inner">
+              <div class="day-meta">
+                <div class="day-meta-item">
+                  <div class="label">真实场景</div>
+                  <div class="value">完成自己的营地小项目、生活责任或自然行动</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">教育目的</div>
+                  <div class="value">主动性、责任、调整和完成感</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">儿童选择</div>
+                  <div class="value">选择一件自己真正愿意负责、规模又可完成的事情</div>
+                </div>
+              </div>
+              <div class="day-reflection">
+                <div class="label">复盘问题</div>
+                <p>这件事中，哪一步是我自己决定并坚持完成的？</p>
+              </div>
+              <div class="day-evidence">
+                <span class="evidence-tag">从计划到完成的过程记录</span>
+                <span class="evidence-tag">孩子自评</span>
+                <span class="evidence-tag">主理人观察</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <div class="day-num">Day 23</div>
+            <div class="day-title">
+              <h4>把经历变成自己的故事</h4>
+              <div class="day-task">从 23 天记录中选择证据，讲述一次挑战、一次失败、一次改变</div>
+            </div>
+            <span class="day-expand">+</span>
+          </div>
+          <div class="day-body">
+            <div class="day-body-inner">
+              <div class="day-meta">
+                <div class="day-meta-item">
+                  <div class="label">真实场景</div>
+                  <div class="value">成长展策划与布置</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">教育目的</div>
+                  <div class="value">反思、表达、自我认识</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">儿童选择</div>
+                  <div class="value">选择公开内容和表达方式，尊重隐私与边界</div>
+                </div>
+              </div>
+              <div class="day-reflection">
+                <div class="label">复盘问题</div>
+                <p>哪一个变化只有我自己最清楚？</p>
+              </div>
+              <div class="day-evidence">
+                <span class="evidence-tag">个人成长档案</span>
+                <span class="evidence-tag">作品展</span>
+                <span class="evidence-tag">三分钟成长故事</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <div class="day-num">Day 24</div>
+            <div class="day-title">
+              <h4>离营不是结束，而是把成长带回家</h4>
+              <div class="day-task">向主理人和同行者表达感谢，向家人讲述成长证据，制定 30 天行动</div>
+            </div>
+            <span class="day-expand">+</span>
+          </div>
+          <div class="day-body">
+            <div class="day-body-inner">
+              <div class="day-meta">
+                <div class="day-meta-item">
+                  <div class="label">真实场景</div>
+                  <div class="value">结营仪式、家庭重逢和未来行动设计</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">教育目的</div>
+                  <div class="value">告别、感恩、迁移、持续行动</div>
+                </div>
+                <div class="day-meta-item">
+                  <div class="label">儿童选择</div>
+                  <div class="value">选择自己的承诺，不设置成人强加的宏大目标</div>
+                </div>
+              </div>
+              <div class="day-reflection">
+                <div class="label">复盘问题</div>
+                <p>回到日常以后，我想保留哪一个新的自己？</p>
+              </div>
+              <div class="day-evidence">
+                <span class="evidence-tag">成长护照</span>
+                <span class="evidence-tag">写给未来自己的信</span>
+                <span class="evidence-tag">家庭 30 天行动卡</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========== 六大成长能力 ========== -->
+    <section class="abilities">
+      <div class="section-tag">孩子会带走什么</div>
+      <h2>24 天后，<br>孩子带回去的不是奖状，而是能力</h2>
+      <p class="section-desc">我们不培养"户外高手"，我们培养能在生活里照顾自己、也能照顾别人的孩子。</p>
+
+      <div class="ability-grid">
+        <div class="ability-card">
+          <div class="num">能力 01</div>
+          <h3>独立生活与自我照顾</h3>
+          <p>从准备装备到管理体力，从安排时间到对自己的选择负责。</p>
+          <div class="example">看得见的变化：出门不再丢三落四，知道根据天气做准备</div>
+        </div>
+        <div class="ability-card">
+          <div class="num">能力 02</div>
+          <h3>风险判断与安全意识</h3>
+          <p>能识别常见危险，知道什么时候该停、什么时候求助、什么时候不能逞强。</p>
+          <div class="example">看得见的变化：过马路、用火、涉水时会先观察再行动</div>
+        </div>
+        <div class="ability-card">
+          <div class="num">能力 03</div>
+          <h3>情绪调节与韧性</h3>
+          <p>在失败、疲惫、害怕和冲突中，慢慢学会稳住自己、重新开始。</p>
+          <div class="example">看得见的变化：遇到挫败不会立刻放弃，能说出自己的感受</div>
+        </div>
+        <div class="ability-card">
+          <div class="num">能力 04</div>
+          <h3>真实沟通与相处</h3>
+          <p>听得懂别人，也说得出自己；意见不同时能协商，发生摩擦后能修复。</p>
+          <div class="example">看得见的变化：会主动表达需要，也愿意认真听别人说话</div>
+        </div>
+        <div class="ability-card">
+          <div class="num">能力 05</div>
+          <h3>自然感知与生态责任</h3>
+          <p>重新打开感官，看见自然的细节，也理解自己和环境的关系。</p>
+          <div class="example">看得见的变化：愿意停下来观察，对自然有好奇和尊重</div>
+        </div>
+        <div class="ability-card">
+          <div class="num">能力 06</div>
+          <h3>主动负责与行动意识</h3>
+          <p>从"被安排"到"我来做"，从完成任务到真正为一件事负责。</p>
+          <div class="example">看得见的变化：会主动找事做，而不是等别人说怎么做</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========== 教育如何发生 ========== -->
+    <section class="edu-cycle">
+      <div class="section-tag">教育方法</div>
+      <h2>教育不是灌输，<br>而是让孩子在真实经历中自己"长出"能力</h2>
+
+      <div class="cycle-diagram">
+        <div class="cycle-steps">
+          <div class="cycle-step">真实场景</div>
+          <span class="cycle-arrow">→</span>
+          <div class="cycle-step">真实任务</div>
+          <span class="cycle-arrow">→</span>
+          <div class="cycle-step">遇到挑战</div>
+          <span class="cycle-arrow">→</span>
+          <div class="cycle-step">自主选择</div>
+          <span class="cycle-arrow">→</span>
+          <div class="cycle-step">承担结果</div>
+          <span class="cycle-arrow">→</span>
+          <div class="cycle-step">引导反思</div>
+          <span class="cycle-arrow">→</span>
+          <div class="cycle-step">迁移到生活</div>
+        </div>
+      </div>
+
+      <p style="font-size:0.92rem; color:var(--muted); line-height:1.75; max-width:600px;">
+        每一天的活动都不是"为了好玩"，而是围绕一个教育目标设计的。孩子在做事情的过程中自然遇到困难——这正是学习开始的地方。主理人不急于给出答案，而是陪孩子一起看清问题、做出选择、体验结果，然后复盘。
+      </p>
+    </section>
+
+
+    <!-- ========== 成长如何被看见 ========== -->
+    <section class="growth-record">
+      <div class="section-tag">成果与记录</div>
+      <h2>成长如何被看见</h2>
+      <p class="section-desc">我们不发"第一名"和"最佳营员"的奖状。每一份记录，都是孩子自己走过的证据。</p>
+
+      <div class="record-grid">
+        <div class="record-item">
+          <div class="icon">📔</div>
+          <h4>个人成长护照</h4>
+          <p>24 天逐日记录、反思和证据收集，孩子自己的成长档案</p>
+        </div>
+        <div class="record-item">
+          <div class="icon">📊</div>
+          <h4>主理人观察记录</h4>
+          <p>少人数陪伴下的真实观察，不是模板评语，而是具体的看见</p>
+        </div>
+        <div class="record-item">
+          <div class="icon">🎨</div>
+          <h4>作品展与成长故事</h4>
+          <p>孩子自己选择和讲述的成果，而不是成人替他们包装的展示</p>
+        </div>
+        <div class="record-item">
+          <div class="icon">📅</div>
+          <h4>30 天家庭行动卡</h4>
+          <p>把营期里的能力带回日常生活，让改变不只是 24 天</p>
+        </div>
+        <div class="record-item">
+          <div class="icon">💬</div>
+          <h4>结营一对一反馈</h4>
+          <p>主理人和家长的真实沟通，不回避可以改进的地方</p>
+        </div>
+        <div class="record-item">
+          <div class="icon">🌱</div>
+          <h4>持续陪伴与回访</h4>
+          <p>不是结营就结束，主理人会在关键节点和家庭保持联系 <span style="color:var(--accent2); font-style:italic;">[待确认]</span></p>
+        </div>
+      </div>
+    </section>
+
+
     <!-- ========== 安全体系 ========== -->
     <section class="safety">
       <div class="section-tag">安全与保障</div>
@@ -711,7 +1837,7 @@
       </div>
       <div class="safety-block">
         <h4>保险</h4>
-        <p>全程意外险覆盖，保额与保险公司在确认报名时一并告知。</p>
+        <p>全程意外险覆盖。<span class="tbd">保额与保险公司待确认</span></p>
       </div>
       <div class="safety-block">
         <h4>家长沟通</h4>
@@ -721,7 +1847,71 @@
         <h4>儿童安全边界</h4>
         <p>身体边界、隐私边界、情绪边界的明确约定与持续守护。尊重每个孩子的节奏和选择。</p>
       </div>
+
+      <div class="safety-quote">
+        我们相信，最好的安全不是把孩子和所有风险隔离开，而是在可控的风险里，让孩子慢慢学会判断、选择和保护自己。主理人的工作，是在安全边界内，给孩子留出真实成长的空间。
+      </div>
     </section>
+
+
+    <!-- ========== 营期信息 ========== -->
+    <section class="camp-info-section">
+      <div class="section-tag">营期信息</div>
+      <h2>营期与基本信息</h2>
+      <p class="section-desc">以下为框架性信息，具体内容待最终确认后更新。欢迎先联系了解。</p>
+
+      <table class="info-table">
+        <tr>
+          <th>项目名称</th>
+          <td>大自然的孩子 · 24 天成长同行计划</td>
+        </tr>
+        <tr>
+          <th>项目时长</th>
+          <td>24 天（6 个章节，每章 4 天）</td>
+        </tr>
+        <tr>
+          <th>营期时间</th>
+          <td><span class="tbd">[具体日期待确认，预计暑假期间]</span></td>
+        </tr>
+        <tr>
+          <th>营期地点</th>
+          <td><span class="tbd">[具体营地与路线待确认，涉及森林/营地/水域/山地等多种自然场景]</span></td>
+        </tr>
+        <tr>
+          <th>适合年龄</th>
+          <td><span class="tbd">[建议年龄范围待确认，欢迎先沟通孩子情况]</span></td>
+        </tr>
+        <tr>
+          <th>同行方式</th>
+          <td>小规模、主理人亲自同行，每个孩子都能被认真看见</td>
+        </tr>
+        <tr>
+          <th>活动内容</th>
+          <td>自然观察、营地生活、水域体验、登山/徒步、搭建、急救、生态行动、个人项目等 <span class="tbd">[具体以最终方案为准]</span></td>
+        </tr>
+        <tr>
+          <th>住宿与餐饮</th>
+          <td><span class="tbd">[待确认：营地宿舍/民宿/露营等组合形式，营养配餐]</span></td>
+        </tr>
+        <tr>
+          <th>费用</th>
+          <td><span class="tbd">[费用结构与金额待确认，欢迎微信咨询]</span></td>
+        </tr>
+        <tr>
+          <th>费用包含</th>
+          <td><span class="tbd">[待确认：住宿、餐饮、活动、教练、装备使用、保险、物料等]</span></td>
+        </tr>
+        <tr>
+          <th>报名方式</th>
+          <td>扫码加微信，先聊聊是否适合 → 电话沟通 → 双方确认 → 再办理手续</td>
+        </tr>
+        <tr>
+          <th>退改政策</th>
+          <td><span class="tbd">[待确认]</span></td>
+        </tr>
+      </table>
+    </section>
+
 
     <!-- ========== 微信联系区 ========== -->
     <section class="contact" id="contact">
@@ -879,6 +2069,105 @@
           因为不是每个孩子、每个家庭都适合这段经历。电话沟通不是筛选"好孩子"，而是让双方真实了解：我们能不能照顾好你的孩子，你能不能接受我们的教育方式。
         </div>
       </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="q-icon">Q</span>
+          <span>24 天会不会太长？孩子想家怎么办？</span>
+          <span class="toggle">+</span>
+        </div>
+        <div class="faq-a">
+          24 天是一个完整的成长周期——适应、学习、挑战、内化，每一步都需要时间。想家是正常的，我们会把它当作一次真实的情绪练习来陪伴，而不是立刻"解决"。如果家长担心，可以先沟通孩子的适应情况，一起判断是否适合。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="q-icon">Q</span>
+          <span>孩子比较内向/敏感，能适应吗？</span>
+          <span class="toggle">+</span>
+        </div>
+        <div class="faq-a">
+          内向和敏感不是问题，反而可能是孩子观察和感受世界的独特方式。小规模同行的好处，就是每个孩子都可以按自己的节奏参与，不用被迫"热闹"。我们欢迎所有性格的孩子，也会在电话沟通中坦诚判断当前方案是否适合。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="q-icon">Q</span>
+          <span>安全怎么保证？万一出事怎么办？</span>
+          <span class="toggle">+</span>
+        </div>
+        <div class="faq-a">
+          安全是底线。我们从活动设计、人员配置、应急预案、保险和家长沟通五个层面做保障。同时，我们也会教孩子自己识别风险、保护自己——这本身就是教育的一部分。具体安全方案会在确认营期后详细告知。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="q-icon">Q</span>
+          <span>每天的活动是固定的吗？</span>
+          <span class="toggle">+</span>
+        </div>
+        <div class="faq-a">
+          大框架是 24 天六章成长路线，但每一天的具体安排会根据天气、孩子状态和真实情境灵活调整。教育不是按剧本走，而是在真实生活里随时抓住学习的机会。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="q-icon">Q</span>
+          <span>需要带什么装备？</span>
+          <span class="toggle">+</span>
+        </div>
+        <div class="faq-a">
+          <span class="tbd">[待确认：会在确认报名后提供详细的装备清单，大部分日常物品家庭已有，特殊装备由项目提供。不会让家长采购一堆用一次就闲置的东西。]</span>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="q-icon">Q</span>
+          <span>如果孩子中途不想参加了，可以退吗？</span>
+          <span class="toggle">+</span>
+        </div>
+        <div class="faq-a">
+          <span class="tbd">[待确认：退改政策会在报名前明确告知。我们会尽量在电话沟通阶段帮双方判断是否适合，减少中途退出的情况。]</span>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="q-icon">Q</span>
+          <span>家长怎么知道孩子每天的情况？</span>
+          <span class="toggle">+</span>
+        </div>
+        <div class="faq-a">
+          <span class="tbd">[待确认：会有定期的图文更新。但我们不做"直播式"播报——一方面给孩子留出真实成长的空间，另一方面也让主理人把精力放在陪伴孩子上。关键节点和特殊情况会第一时间联系。]</span>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="q-icon">Q</span>
+          <span>和普通夏令营有什么不一样？</span>
+          <span class="toggle">+</span>
+        </div>
+        <div class="faq-a">
+          最大的不同是：我们不把 24 天当成"24 个活动的堆叠"，而是一条完整的成长路线。每一天的活动都有教育目标，每一次挑战都有反思，每一个孩子都被真实看见。我们卖的不是活动，是一段有主理人深度陪伴的成长经历。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="q-icon">Q</span>
+          <span>结营以后，孩子的变化能保持吗？</span>
+          <span class="toggle">+</span>
+        </div>
+        <div class="faq-a">
+          这是一个好问题。24 天能播下种子，但能不能发芽，要看回家后的土壤。所以我们有"30 天家庭行动卡"和结营反馈，帮助家长把营期里的能力迁移到日常生活里。成长不是 24 天的事，是家庭和孩子一起持续走的路。
+        </div>
+      </div>
     </section>
 
     <!-- ========== 结尾行动区 ========== -->
@@ -894,16 +2183,9 @@
     </section>
 
     <footer>
-      <div class="footer-brand-section">
-        <div class="footer-logo-combo">
-          <img src="assets/logo-circular.png" alt="天泽户外 徽标" class="footer-logo-circular">
-          <div class="footer-logo-divider"></div>
-          <img src="assets/logo-horizontal.png" alt="天泽户外" class="footer-logo-horizontal">
-        </div>
-        <div class="footer-brand-text">
-          <div class="fb-name">天泽户外 · 大自然的孩子</div>
-          <div class="fb-tagline">WISDOM FROM NATURE</div>
-        </div>
+      <div class="footer-logo-wrap">
+        <img src="assets/logo-circular.png" alt="天泽户外 徽标" class="footer-logo-circular" style="height:56px;">
+        <img src="assets/logo-horizontal.png" alt="天泽户外" class="footer-logo-horizontal" style="height:40px;">
       </div>
       <div class="brand">天泽户外 · 大自然的孩子</div>
       <p>2026 鹿爸私房夏令营 · 主理人亲自陪伴</p>
@@ -915,6 +2197,35 @@
   <a href="#contact" class="float-contact">扫码加微信，先聊聊是否适合</a>
 
   <script>
+
+    // 章节切换
+    (function() {
+      var tabs = document.querySelectorAll('.chapter-tab');
+      var sections = document.querySelectorAll('.chapter-section');
+      tabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          var ch = this.getAttribute('data-chapter');
+          tabs.forEach(function(t) { t.classList.remove('active'); });
+          sections.forEach(function(s) { s.classList.remove('active'); });
+          this.classList.add('active');
+          document.getElementById('chapter-' + ch).classList.add('active');
+        });
+      });
+    })();
+
+    // 天数卡片展开/收起
+    (function() {
+      var cards = document.querySelectorAll('.day-card');
+      cards.forEach(function(card) {
+        var header = card.querySelector('.day-header');
+        if (header) {
+          header.addEventListener('click', function() {
+            card.classList.toggle('open');
+          });
+        }
+      });
+    })();
+
     // FAQ 展开/收起
     (function() {
       var faqs = document.querySelectorAll('.faq-item');
