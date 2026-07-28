@@ -214,15 +214,30 @@
       .top-nav { flex-direction: column; align-items: flex-start; }
     }
   
-    /* === Logo styles === */
-    .nav-brand-logo { height: 38px; width: auto; display: block; }
-    .footer-logo-wrap { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
-    .footer-logo-circular { height: 56px; width: auto; display: block; }
-    .footer-logo-horizontal { height: 40px; width: auto; display: block; }
+    /* === 品牌Logo系统 === */
+    .nav-brand-wrap { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .nav-brand-logo { height: 50px; width: auto; display: block; transition: opacity 0.2s; }
+    .nav-brand-wrap:hover .nav-brand-logo { opacity: 0.85; }
+    .nav-brand-text { display: flex; flex-direction: column; line-height: 1.2; }
+    .nav-brand-text .brand-name { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--ink); }
+    .nav-brand-text .brand-since { font-family: var(--font-mono); font-size: 0.65rem; color: var(--muted); letter-spacing: 0.05em; }
+
+    .footer-brand-section { display: flex; flex-direction: column; align-items: center; gap: 1.2rem; padding: 1rem 0 0.5rem; }
+    .footer-logo-combo { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+    .footer-logo-circular { height: 90px; width: auto; display: block; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.1)); }
+    .footer-logo-divider { width: 1px; height: 60px; background: var(--rule); }
+    .footer-logo-horizontal { height: 54px; width: auto; display: block; }
+    .footer-brand-text { text-align: center; }
+    .footer-brand-text .fb-name { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--ink); margin-bottom: 0.2rem; }
+    .footer-brand-text .fb-tagline { font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
     @media (max-width: 768px) {
-      .nav-brand-logo { height: 30px; }
-      .footer-logo-circular { height: 48px; }
-      .footer-logo-horizontal { height: 34px; }
+      .nav-brand-logo { height: 38px; }
+      .nav-brand-text .brand-name { font-size: 0.88rem; }
+      .nav-brand-text .brand-since { font-size: 0.6rem; }
+      .footer-logo-circular { height: 72px; }
+      .footer-logo-horizontal { height: 42px; }
+      .footer-logo-divider { height: 48px; }
+      .footer-logo-combo { gap: 1rem; }
     }
 
 </style>
@@ -231,7 +246,7 @@
 
   <!-- 顶部导航 -->
   <div class="top-nav">
-    <div class="nav-brand"><img src="assets/logo-horizontal.png" alt="天泽户外" class="nav-brand-logo" style="height:38px;"></div>
+    <div class="nav-brand"><a href="tianze-outdoor.html" class="nav-brand-wrap"><img src="assets/logo-horizontal.png" alt="天泽户外" class="nav-brand-logo"><span class="nav-brand-text"><span class="brand-name">天泽户外</span><span class="brand-since">EST. 1999</span></span></a></div>
     <div class="nav-links">
       <a href="tianze-outdoor.html">关于天泽</a>
       <a href="desert-challenge-2026.html">沙漠挑战营</a>
@@ -425,7 +440,17 @@
   </section>
 
   <footer>
-    <div class="footer-logo-wrap"><img src="assets/logo-circular.png" alt="天泽户外 徽标" class="footer-logo-circular" style="height:56px;"><img src="assets/logo-horizontal.png" alt="天泽户外" class="footer-logo-horizontal" style="height:40px;"></div>
+    <div class="footer-brand-section">
+        <div class="footer-logo-combo">
+          <img src="assets/logo-circular.png" alt="天泽户外 徽标" class="footer-logo-circular">
+          <div class="footer-logo-divider"></div>
+          <img src="assets/logo-horizontal.png" alt="天泽户外" class="footer-logo-horizontal">
+        </div>
+        <div class="footer-brand-text">
+          <div class="fb-name">天泽户外 · 大自然的孩子</div>
+          <div class="fb-tagline">WISDOM FROM NATURE</div>
+        </div>
+      </div>
     <div style="font-family:var(--font-display); font-size:1.2rem; font-weight:700; color:var(--accent); letter-spacing:0.05em; margin-bottom:0.3rem;">天泽户外</div>
     <p style="font-size:0.78rem; color:var(--muted);">创办于 1999 年 · 杭州天泽户外运动咨询有限公司</p>
     <div class="brand" style="margin-top:0.6rem;">天泽户外 · 腾格里沙漠亲子挑战赛预告</div>
